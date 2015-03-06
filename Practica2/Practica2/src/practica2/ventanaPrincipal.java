@@ -24,6 +24,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.FlowLayout());
@@ -35,6 +36,9 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Etiqueta");
         getContentPane().add(jLabel1);
 
+        jToggleButton1.setText("jToggleButton1");
+        getContentPane().add(jToggleButton1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -43,5 +47,6 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
