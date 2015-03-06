@@ -28,6 +28,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
+        jButton1.setForeground(new java.awt.Color(153, 0, 0));
         jButton1.setText("Boton");
         getContentPane().add(jButton1);
 
