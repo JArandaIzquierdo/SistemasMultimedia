@@ -27,19 +27,30 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
+        jPanel1 = new javax.swing.JPanel();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jPanel4 = new javax.swing.JPanel();
+        jToolBar1 = new javax.swing.JToolBar();
+        jPanel5 = new javax.swing.JPanel();
+        jSplitPane2 = new javax.swing.JSplitPane();
+        jSplitPane3 = new javax.swing.JSplitPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.FlowLayout());
 
         jButton1.setForeground(new java.awt.Color(153, 0, 0));
         jButton1.setText("Boton");
-        getContentPane().add(jButton1);
+        getContentPane().add(jButton1, java.awt.BorderLayout.LINE_START);
 
         jLabel1.setText("Etiqueta");
-        getContentPane().add(jLabel1);
+        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
         jToggleButton1.setText("jToggleButton1");
-        getContentPane().add(jToggleButton1);
+        getContentPane().add(jToggleButton1, java.awt.BorderLayout.PAGE_END);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("JTree");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("colors");
@@ -75,7 +86,68 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(jTree1);
 
-        getContentPane().add(jScrollPane1);
+        getContentPane().add(jScrollPane1, java.awt.BorderLayout.LINE_END);
+
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jToggleButton2.setText("jToggleButton2");
+        jPanel1.add(jToggleButton2, java.awt.BorderLayout.PAGE_END);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 331, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 291, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab1", jPanel2);
+
+        jPanel3.setLayout(new java.awt.BorderLayout());
+
+        jDesktopPane1.setLayout(new java.awt.BorderLayout());
+
+        jInternalFrame1.setClosable(true);
+        jInternalFrame1.setIconifiable(true);
+        jInternalFrame1.setMaximizable(true);
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jDesktopPane1.add(jInternalFrame1, java.awt.BorderLayout.CENTER);
+
+        jPanel3.add(jDesktopPane1, java.awt.BorderLayout.CENTER);
+
+        jTabbedPane1.addTab("tab2", jPanel3);
+
+        jPanel4.setLayout(new java.awt.BorderLayout());
+
+        jToolBar1.setRollover(true);
+        jPanel4.add(jToolBar1, java.awt.BorderLayout.PAGE_START);
+
+        jTabbedPane1.addTab("tab3", jPanel4);
+
+        jPanel5.setLayout(new java.awt.BorderLayout());
+        jPanel5.add(jSplitPane2, java.awt.BorderLayout.PAGE_END);
+        jPanel5.add(jSplitPane3, java.awt.BorderLayout.LINE_START);
+
+        jTabbedPane1.addTab("tab4", jPanel5);
+
+        jPanel1.add(jTabbedPane1, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -84,9 +156,21 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSplitPane jSplitPane2;
+    private javax.swing.JSplitPane jSplitPane3;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }
