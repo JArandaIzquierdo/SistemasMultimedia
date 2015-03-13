@@ -49,9 +49,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
 
         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            if (evt.getSource() == jButtonPractica3) {
+                VentanaPrincipal.this.jButtonPractica3MouseEntered(evt);
+            }
         }
 
         public void mouseExited(java.awt.event.MouseEvent evt) {
+            if (evt.getSource() == jButtonPractica3) {
+                VentanaPrincipal.this.jButtonPractica3MouseExited(evt);
+            }
         }
 
         public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -62,9 +68,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonPractica3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPractica3MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar que cambiar el color del boton
         this.jButtonPractica3.setBackground(Color.red);
     }//GEN-LAST:event_jButtonPractica3MouseClicked
+
+    private void jButtonPractica3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPractica3MouseEntered
+        // Evento al entrar en la region del boton cambia su fondo a color azul
+        this.jButtonPractica3.setBackground(Color.blue);
+    }//GEN-LAST:event_jButtonPractica3MouseEntered
+
+    private void jButtonPractica3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPractica3MouseExited
+        // Evento al salir de la zona del boton cambia su fonde a color verde
+        this.jButtonPractica3.setBackground(Color.green);
+    }//GEN-LAST:event_jButtonPractica3MouseExited
 
 
 
