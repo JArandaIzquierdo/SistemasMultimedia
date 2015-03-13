@@ -23,12 +23,50 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextFieldBarraInferior = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jToolBar1 = new javax.swing.JToolBar();
+        jButtonLapiz = new javax.swing.JButton();
+        jButtonLinea = new javax.swing.JButton();
+        jButtonRectangulo = new javax.swing.JButton();
+        jButtonElipse = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuEdicion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().add(jTextFieldBarraInferior, java.awt.BorderLayout.PAGE_END);
+
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jToolBar1.setRollover(true);
+
+        jButtonLapiz.setText("jButton1");
+        jButtonLapiz.setFocusable(false);
+        jButtonLapiz.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonLapiz.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButtonLapiz);
+
+        jButtonLinea.setText("jButton1");
+        jButtonLinea.setFocusable(false);
+        jButtonLinea.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonLinea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButtonLinea);
+
+        jButtonRectangulo.setText("jButton2");
+        jButtonRectangulo.setFocusable(false);
+        jButtonRectangulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonRectangulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButtonRectangulo);
+
+        jButtonElipse.setText("jButton3");
+        jButtonElipse.setFocusable(false);
+        jButtonElipse.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonElipse.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButtonElipse);
+
+        jPanel1.add(jToolBar1, java.awt.BorderLayout.PAGE_START);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         jMenuArchivo.setText("Archivo");
         jMenuBar1.add(jMenuArchivo);
@@ -44,9 +82,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonElipse;
+    private javax.swing.JButton jButtonLapiz;
+    private javax.swing.JButton jButtonLinea;
+    private javax.swing.JButton jButtonRectangulo;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuEdicion;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldBarraInferior;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
