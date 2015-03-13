@@ -22,59 +22,91 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupHerramientasDibujo = new javax.swing.ButtonGroup();
+        jToolBar1 = new javax.swing.JToolBar();
+        jToggleButtonPunto = new javax.swing.JToggleButton();
+        jToggleButtonLinea = new javax.swing.JToggleButton();
+        jToggleButtonRectangulo = new javax.swing.JToggleButton();
+        jToggleButtonOvalo = new javax.swing.JToggleButton();
         jTextFieldBarraInferior = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jToolBar1 = new javax.swing.JToolBar();
-        jButtonLapiz = new javax.swing.JButton();
-        jButtonLinea = new javax.swing.JButton();
-        jButtonRectangulo = new javax.swing.JButton();
-        jButtonElipse = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        jPanel2 = new javax.swing.JPanel();
+        jToggleButtonColorNegro = new javax.swing.JToggleButton();
+        jToggleButtonColorRojo = new javax.swing.JToggleButton();
+        jToggleButtonColorAzul = new javax.swing.JToggleButton();
+        jToggleButtonColorBlanco = new javax.swing.JToggleButton();
+        jToggleButtonColorAmarillo = new javax.swing.JToggleButton();
+        jToggleButtonColorVerde = new javax.swing.JToggleButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuEdicion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jToolBar1.setRollover(true);
+
+        buttonGroupHerramientasDibujo.add(jToggleButtonPunto);
+        jToggleButtonPunto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Lapiz.gif"))); // NOI18N
+        jToggleButtonPunto.setFocusable(false);
+        jToggleButtonPunto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButtonPunto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jToggleButtonPunto);
+
+        buttonGroupHerramientasDibujo.add(jToggleButtonLinea);
+        jToggleButtonLinea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Linea.gif"))); // NOI18N
+        jToggleButtonLinea.setFocusable(false);
+        jToggleButtonLinea.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButtonLinea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jToggleButtonLinea);
+
+        buttonGroupHerramientasDibujo.add(jToggleButtonRectangulo);
+        jToggleButtonRectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Rectangulo.gif"))); // NOI18N
+        jToggleButtonRectangulo.setFocusable(false);
+        jToggleButtonRectangulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButtonRectangulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jToggleButtonRectangulo);
+
+        buttonGroupHerramientasDibujo.add(jToggleButtonOvalo);
+        jToggleButtonOvalo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ovalo.gif"))); // NOI18N
+        jToggleButtonOvalo.setFocusable(false);
+        jToggleButtonOvalo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButtonOvalo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jToggleButtonOvalo);
+
+        getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
         getContentPane().add(jTextFieldBarraInferior, java.awt.BorderLayout.PAGE_END);
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jToolBar1.setRollover(true);
+        jToggleButtonColorNegro.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(jToggleButtonColorNegro);
 
-        jButtonLapiz.setText("jButton1");
-        jButtonLapiz.setFocusable(false);
-        jButtonLapiz.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonLapiz.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButtonLapiz);
+        jToggleButtonColorRojo.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel2.add(jToggleButtonColorRojo);
 
-        jButtonLinea.setText("jButton1");
-        jButtonLinea.setFocusable(false);
-        jButtonLinea.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonLinea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButtonLinea);
+        jToggleButtonColorAzul.setBackground(new java.awt.Color(0, 0, 153));
+        jPanel2.add(jToggleButtonColorAzul);
 
-        jButtonRectangulo.setText("jButton2");
-        jButtonRectangulo.setFocusable(false);
-        jButtonRectangulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonRectangulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButtonRectangulo);
+        jToggleButtonColorBlanco.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(jToggleButtonColorBlanco);
 
-        jButtonElipse.setText("jButton3");
-        jButtonElipse.setFocusable(false);
-        jButtonElipse.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonElipse.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButtonElipse);
+        jToggleButtonColorAmarillo.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel2.add(jToggleButtonColorAmarillo);
 
-        jPanel1.add(jToolBar1, java.awt.BorderLayout.PAGE_START);
+        jToggleButtonColorVerde.setBackground(new java.awt.Color(0, 204, 51));
+        jPanel2.add(jToggleButtonColorVerde);
+
+        jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_END);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         jMenuArchivo.setText("Archivo");
-        jMenuBar1.add(jMenuArchivo);
+        jMenuBar2.add(jMenuArchivo);
 
         jMenuEdicion.setText("Edición");
-        jMenuBar1.add(jMenuEdicion);
+        jMenuBar2.add(jMenuEdicion);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBar2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -82,15 +114,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonElipse;
-    private javax.swing.JButton jButtonLapiz;
-    private javax.swing.JButton jButtonLinea;
-    private javax.swing.JButton jButtonRectangulo;
+    private javax.swing.ButtonGroup buttonGroupHerramientasDibujo;
     private javax.swing.JMenu jMenuArchivo;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenu jMenuEdicion;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextFieldBarraInferior;
+    private javax.swing.JToggleButton jToggleButtonColorAmarillo;
+    private javax.swing.JToggleButton jToggleButtonColorAzul;
+    private javax.swing.JToggleButton jToggleButtonColorBlanco;
+    private javax.swing.JToggleButton jToggleButtonColorNegro;
+    private javax.swing.JToggleButton jToggleButtonColorRojo;
+    private javax.swing.JToggleButton jToggleButtonColorVerde;
+    private javax.swing.JToggleButton jToggleButtonLinea;
+    private javax.swing.JToggleButton jToggleButtonOvalo;
+    private javax.swing.JToggleButton jToggleButtonPunto;
+    private javax.swing.JToggleButton jToggleButtonRectangulo;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
