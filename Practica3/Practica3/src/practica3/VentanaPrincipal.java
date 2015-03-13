@@ -1,5 +1,7 @@
 package practica3;
 
+import java.awt.Color;
+
 /**
  *
  * @author Javier Aranda Izquierdo
@@ -24,14 +26,45 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jButtonPractica3 = new javax.swing.JButton();
 
+        FormListener formListener = new FormListener();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
         jButtonPractica3.setText("Boton");
+        jButtonPractica3.addMouseListener(formListener);
         getContentPane().add(jButtonPractica3);
 
         pack();
+    }
+
+    // Code for dispatching events from components to event handlers.
+
+    private class FormListener implements java.awt.event.MouseListener {
+        FormListener() {}
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            if (evt.getSource() == jButtonPractica3) {
+                VentanaPrincipal.this.jButtonPractica3MouseClicked(evt);
+            }
+        }
+
+        public void mouseEntered(java.awt.event.MouseEvent evt) {
+        }
+
+        public void mouseExited(java.awt.event.MouseEvent evt) {
+        }
+
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+        }
+
+        public void mouseReleased(java.awt.event.MouseEvent evt) {
+        }
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonPractica3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPractica3MouseClicked
+        // TODO add your handling code here:
+        this.jButtonPractica3.setBackground(Color.red);
+    }//GEN-LAST:event_jButtonPractica3MouseClicked
 
 
 
