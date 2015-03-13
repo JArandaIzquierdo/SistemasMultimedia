@@ -1,6 +1,8 @@
 package practica3;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
 
 /**
  *
@@ -14,7 +16,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
     }
-
+    Point p;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,7 +97,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         public void mouseMoved(java.awt.event.MouseEvent evt) {
         }
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jButtonPractica3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPractica3MouseClicked
         // Evento de clicar que cambiar el color del boton
         this.jButtonPractica3.setBackground(Color.red);
@@ -118,7 +120,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         // Al clicar en el frame, cambia el nombre del boton 
-        this.jButtonPractica3.setText("Click en el frame");
+        p=evt.getPoint();
+        this.repaint();
     }//GEN-LAST:event_formMouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -131,7 +134,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setSize(400, 400);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-
+public void paint(Graphics g){
+    super.paint(g);
+    // Código (mensajes a g)
+    g.fillOval(p.x, p.y, 10, 10);
+    
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
