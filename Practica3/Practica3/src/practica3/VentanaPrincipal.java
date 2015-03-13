@@ -25,26 +25,46 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonPractica3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseListener(formListener);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
         jButtonPractica3.setText("Boton");
+        jButtonPractica3.addMouseMotionListener(formListener);
         jButtonPractica3.addMouseListener(formListener);
         getContentPane().add(jButtonPractica3);
+
+        jButton2.setText("Boton 2");
+        jButton2.addMouseListener(formListener);
+        jButton2.addActionListener(formListener);
+        getContentPane().add(jButton2);
 
         pack();
     }
 
     // Code for dispatching events from components to event handlers.
 
-    private class FormListener implements java.awt.event.MouseListener {
+    private class FormListener implements java.awt.event.ActionListener, java.awt.event.MouseListener, java.awt.event.MouseMotionListener {
         FormListener() {}
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            if (evt.getSource() == jButton2) {
+                VentanaPrincipal.this.jButton2ActionPerformed(evt);
+            }
+        }
+
         public void mouseClicked(java.awt.event.MouseEvent evt) {
             if (evt.getSource() == jButtonPractica3) {
                 VentanaPrincipal.this.jButtonPractica3MouseClicked(evt);
+            }
+            else if (evt.getSource() == VentanaPrincipal.this) {
+                VentanaPrincipal.this.formMouseClicked(evt);
+            }
+            else if (evt.getSource() == jButton2) {
+                VentanaPrincipal.this.jButton2MouseClicked(evt);
             }
         }
 
@@ -65,6 +85,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         public void mouseReleased(java.awt.event.MouseEvent evt) {
         }
+
+        public void mouseDragged(java.awt.event.MouseEvent evt) {
+            if (evt.getSource() == jButtonPractica3) {
+                VentanaPrincipal.this.jButtonPractica3MouseDragged(evt);
+            }
+        }
+
+        public void mouseMoved(java.awt.event.MouseEvent evt) {
+        }
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonPractica3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPractica3MouseClicked
@@ -82,9 +111,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jButtonPractica3.setBackground(Color.green);
     }//GEN-LAST:event_jButtonPractica3MouseExited
 
+    private void jButtonPractica3MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPractica3MouseDragged
+        // Evento al arrastrar el raton desde el boton
+        this.jButtonPractica3.setBackground(Color.yellow);
+    }//GEN-LAST:event_jButtonPractica3MouseDragged
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // Al clicar en el frame, cambia el nombre del boton 
+        this.jButtonPractica3.setText("Click en el frame");
+    }//GEN-LAST:event_formMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // Evento mouseClicked para el boton 2
+        this.jButton2.setVisible(false);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // ActionPerformance para el boton 2
+        this.setSize(400, 400);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonPractica3;
     // End of variables declaration//GEN-END:variables
 }
