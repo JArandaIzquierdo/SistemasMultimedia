@@ -1,5 +1,7 @@
 package practica4;
 
+import java.awt.Color;
+import static java.awt.Color.black;
 import java.awt.Graphics;
 import java.awt.Point;
 
@@ -15,11 +17,35 @@ public class Lienzo extends javax.swing.JPanel {
     public Lienzo() {
         initComponents();
     }
+    
     Point p;
+    Color c= black;
+    boolean relleno=false;
+
+    
+    public Color getColor() {
+        return c;
+    }
+
+    public void setColor(Color c) {
+        this.c = c;
+    }
+
+    public boolean isRelleno() {
+        return relleno;
+    }
+
+    public void setRelleno(boolean relleno) {
+        this.relleno = relleno;
+    }
+
+    
+    
     public void paint(Graphics g){
         super.paint (g);
         // Código (mensajes a g)
-        g.fillOval(p.x, p.y, 10, 10);
+        if(p!=null){
+        g.fillOval(p.x, p.y, 10, 10);}
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,6 +55,12 @@ public class Lienzo extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -42,7 +74,15 @@ public class Lienzo extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // Cuando haces click en el Lienzo
+        p=evt.getPoint();
+        this.repaint();
+    }//GEN-LAST:event_formMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+
+
 }

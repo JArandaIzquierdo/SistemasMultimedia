@@ -14,6 +14,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        this.setSize(500, 500);
     }
 
     /**
@@ -31,16 +32,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonLinea = new javax.swing.JToggleButton();
         jToggleButtonRectangulo = new javax.swing.JToggleButton();
         jToggleButtonOvalo = new javax.swing.JToggleButton();
-        jTextFieldBarraInferior = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jLabelBarraEstado = new javax.swing.JLabel();
+        pabelCentral = new javax.swing.JPanel();
+        PanelPropiedades = new javax.swing.JPanel();
+        panelColores = new javax.swing.JPanel();
         jToggleButtonColorNegro = new javax.swing.JToggleButton();
         jToggleButtonColorRojo = new javax.swing.JToggleButton();
         jToggleButtonColorAzul = new javax.swing.JToggleButton();
         jToggleButtonColorBlanco = new javax.swing.JToggleButton();
         jToggleButtonColorAmarillo = new javax.swing.JToggleButton();
         jToggleButtonColorVerde = new javax.swing.JToggleButton();
-        lienzo1 = new practica4.Lienzo();
+        jCheckBoxRelleno = new javax.swing.JCheckBox();
+        lienzo = new practica4.Lienzo();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuItemNuevo = new javax.swing.JMenuItem();
@@ -81,45 +84,62 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonOvalo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jToggleButtonOvalo);
 
-        getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
-        getContentPane().add(jTextFieldBarraInferior, java.awt.BorderLayout.PAGE_END);
+        getContentPane().add(jToolBar1, java.awt.BorderLayout.NORTH);
 
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        jLabelBarraEstado.setText("Barra de estado");
+        getContentPane().add(jLabelBarraEstado, java.awt.BorderLayout.SOUTH);
+
+        pabelCentral.setLayout(new java.awt.BorderLayout());
+
+        PanelPropiedades.setLayout(new java.awt.BorderLayout());
+
+        panelColores.setLayout(new java.awt.GridLayout(2, 3));
 
         jToggleButtonColorNegro.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(jToggleButtonColorNegro);
+        jToggleButtonColorNegro.setPreferredSize(new java.awt.Dimension(25, 25));
+        panelColores.add(jToggleButtonColorNegro);
 
         jToggleButtonColorRojo.setBackground(new java.awt.Color(204, 0, 0));
-        jPanel2.add(jToggleButtonColorRojo);
+        panelColores.add(jToggleButtonColorRojo);
 
         jToggleButtonColorAzul.setBackground(new java.awt.Color(0, 0, 153));
-        jPanel2.add(jToggleButtonColorAzul);
+        panelColores.add(jToggleButtonColorAzul);
 
         jToggleButtonColorBlanco.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(jToggleButtonColorBlanco);
+        panelColores.add(jToggleButtonColorBlanco);
 
         jToggleButtonColorAmarillo.setBackground(new java.awt.Color(255, 255, 0));
-        jPanel2.add(jToggleButtonColorAmarillo);
+        panelColores.add(jToggleButtonColorAmarillo);
 
         jToggleButtonColorVerde.setBackground(new java.awt.Color(0, 204, 51));
-        jPanel2.add(jToggleButtonColorVerde);
+        panelColores.add(jToggleButtonColorVerde);
 
-        jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_END);
+        PanelPropiedades.add(panelColores, java.awt.BorderLayout.WEST);
 
-        javax.swing.GroupLayout lienzo1Layout = new javax.swing.GroupLayout(lienzo1);
-        lienzo1.setLayout(lienzo1Layout);
-        lienzo1Layout.setHorizontalGroup(
-            lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jCheckBoxRelleno.setText("Relleno");
+        jCheckBoxRelleno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxRellenoActionPerformed(evt);
+            }
+        });
+        PanelPropiedades.add(jCheckBoxRelleno, java.awt.BorderLayout.LINE_END);
+
+        pabelCentral.add(PanelPropiedades, java.awt.BorderLayout.SOUTH);
+
+        javax.swing.GroupLayout lienzoLayout = new javax.swing.GroupLayout(lienzo);
+        lienzo.setLayout(lienzoLayout);
+        lienzoLayout.setHorizontalGroup(
+            lienzoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        lienzo1Layout.setVerticalGroup(
-            lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 203, Short.MAX_VALUE)
+        lienzoLayout.setVerticalGroup(
+            lienzoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 194, Short.MAX_VALUE)
         );
 
-        jPanel1.add(lienzo1, java.awt.BorderLayout.CENTER);
+        pabelCentral.add(lienzo, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(pabelCentral, java.awt.BorderLayout.CENTER);
 
         jMenuArchivo.setText("Archivo");
 
@@ -189,20 +209,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItemGuardarActionPerformed
 
+    private void jCheckBoxRellenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxRellenoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxRellenoActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PanelPropiedades;
     private javax.swing.ButtonGroup buttonGroupHerramientasDibujo;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemEdicion;
+    private javax.swing.JCheckBox jCheckBoxRelleno;
+    private javax.swing.JLabel jLabelBarraEstado;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenu jMenuEdicion;
     private javax.swing.JMenuItem jMenuItemAbrirç;
     private javax.swing.JMenuItem jMenuItemGuardar;
     private javax.swing.JMenuItem jMenuItemNuevo;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextFieldBarraInferior;
     private javax.swing.JToggleButton jToggleButtonColorAmarillo;
     private javax.swing.JToggleButton jToggleButtonColorAzul;
     private javax.swing.JToggleButton jToggleButtonColorBlanco;
@@ -214,6 +238,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButtonPunto;
     private javax.swing.JToggleButton jToggleButtonRectangulo;
     private javax.swing.JToolBar jToolBar1;
-    private practica4.Lienzo lienzo1;
+    private practica4.Lienzo lienzo;
+    private javax.swing.JPanel pabelCentral;
+    private javax.swing.JPanel panelColores;
     // End of variables declaration//GEN-END:variables
 }
