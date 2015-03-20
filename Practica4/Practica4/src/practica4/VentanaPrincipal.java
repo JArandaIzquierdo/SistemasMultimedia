@@ -40,7 +40,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonColorBlanco = new javax.swing.JToggleButton();
         jToggleButtonColorAmarillo = new javax.swing.JToggleButton();
         jToggleButtonColorVerde = new javax.swing.JToggleButton();
-        jPanel3 = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuItemNuevo = new javax.swing.JMenuItem();
@@ -105,7 +104,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel2.add(jToggleButtonColorVerde);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_END);
-        jPanel1.add(jPanel3, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -190,7 +188,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemNuevo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextFieldBarraInferior;
     private javax.swing.JToggleButton jToggleButtonColorAmarillo;
     private javax.swing.JToggleButton jToggleButtonColorAzul;
