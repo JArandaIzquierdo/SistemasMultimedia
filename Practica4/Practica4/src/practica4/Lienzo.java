@@ -1,5 +1,8 @@
 package practica4;
 
+import java.awt.Graphics;
+import java.awt.Point;
+
 /**
  *
  * @author Javier Aranda Izquiedo
@@ -12,7 +15,12 @@ public class Lienzo extends javax.swing.JPanel {
     public Lienzo() {
         initComponents();
     }
-
+    Point p;
+    public void paint(Graphics g){
+        super.paint (g);
+        // Código (mensajes a g)
+        g.fillOval(p.x, p.y, 10, 10);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

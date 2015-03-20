@@ -40,6 +40,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonColorBlanco = new javax.swing.JToggleButton();
         jToggleButtonColorAmarillo = new javax.swing.JToggleButton();
         jToggleButtonColorVerde = new javax.swing.JToggleButton();
+        lienzo1 = new practica4.Lienzo();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuItemNuevo = new javax.swing.JMenuItem();
@@ -104,6 +105,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel2.add(jToggleButtonColorVerde);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_END);
+
+        javax.swing.GroupLayout lienzo1Layout = new javax.swing.GroupLayout(lienzo1);
+        lienzo1.setLayout(lienzo1Layout);
+        lienzo1Layout.setHorizontalGroup(
+            lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        lienzo1Layout.setVerticalGroup(
+            lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 203, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(lienzo1, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -200,5 +214,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButtonPunto;
     private javax.swing.JToggleButton jToggleButtonRectangulo;
     private javax.swing.JToolBar jToolBar1;
+    private practica4.Lienzo lienzo1;
     // End of variables declaration//GEN-END:variables
 }
