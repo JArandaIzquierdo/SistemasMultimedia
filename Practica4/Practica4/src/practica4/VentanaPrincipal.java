@@ -1,5 +1,8 @@
 package practica4;
 
+import java.io.File;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author Javier Aranda
@@ -114,10 +117,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuItemAbrirç.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemAbrirç.setText("Abrir");
+        jMenuItemAbrirç.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAbrirçActionPerformed(evt);
+            }
+        });
         jMenuArchivo.add(jMenuItemAbrirç);
 
         jMenuItemGuardar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemGuardar.setText("Guardar");
+        jMenuItemGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemGuardarActionPerformed(evt);
+            }
+        });
         jMenuArchivo.add(jMenuItemGuardar);
 
         jMenuBar2.add(jMenuArchivo);
@@ -143,6 +156,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jCheckBoxMenuItemEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemEdicionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxMenuItemEdicionActionPerformed
+
+    private void jMenuItemAbrirçActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAbrirçActionPerformed
+        // TODO add your handling code here:
+        JFileChooser dlg = new JFileChooser();
+        int resp = dlg.showOpenDialog(this);
+        if( resp == JFileChooser.APPROVE_OPTION) {
+            File f = dlg.getSelectedFile();
+            //Código
+}
+    }//GEN-LAST:event_jMenuItemAbrirçActionPerformed
+
+    private void jMenuItemGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGuardarActionPerformed
+        // TODO add your handling code here:
+        JFileChooser dlg = new JFileChooser();
+        int resp = dlg.showSaveDialog(this);
+        if( resp == JFileChooser.APPROVE_OPTION) {
+            File f = dlg.getSelectedFile();
+            //Código
+        }
+    }//GEN-LAST:event_jMenuItemGuardarActionPerformed
 
 
 
