@@ -21,7 +21,7 @@ public class Lienzo extends javax.swing.JPanel {
     Point p;
     Color c= black;
     boolean relleno=false;
-
+    //static final int forma;
     
     public Color getColor() {
         return c;
@@ -45,6 +45,8 @@ public class Lienzo extends javax.swing.JPanel {
         super.paint (g);
         // Código (mensajes a g)
         if(p!=null){
+            //switch{
+                    
         g.fillOval(p.x, p.y, 10, 10);}
     }
     /**

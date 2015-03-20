@@ -61,6 +61,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonPunto.setFocusable(false);
         jToggleButtonPunto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonPunto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButtonPunto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonPuntoActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jToggleButtonPunto);
 
         buttonGroupHerramientasDibujo.add(jToggleButtonLinea);
@@ -68,6 +73,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonLinea.setFocusable(false);
         jToggleButtonLinea.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonLinea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButtonLinea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonLineaActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jToggleButtonLinea);
 
         buttonGroupHerramientasDibujo.add(jToggleButtonRectangulo);
@@ -75,6 +85,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonRectangulo.setFocusable(false);
         jToggleButtonRectangulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonRectangulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButtonRectangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonRectanguloActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jToggleButtonRectangulo);
 
         buttonGroupHerramientasDibujo.add(jToggleButtonOvalo);
@@ -82,11 +97,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonOvalo.setFocusable(false);
         jToggleButtonOvalo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonOvalo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButtonOvalo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonOvaloActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jToggleButtonOvalo);
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.NORTH);
 
         jLabelBarraEstado.setText("Barra de estado");
+        jLabelBarraEstado.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED)));
         getContentPane().add(jLabelBarraEstado, java.awt.BorderLayout.SOUTH);
 
         pabelCentral.setLayout(new java.awt.BorderLayout());
@@ -97,21 +118,56 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jToggleButtonColorNegro.setBackground(new java.awt.Color(0, 0, 0));
         jToggleButtonColorNegro.setPreferredSize(new java.awt.Dimension(25, 25));
+        jToggleButtonColorNegro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonColorNegroActionPerformed(evt);
+            }
+        });
         panelColores.add(jToggleButtonColorNegro);
 
         jToggleButtonColorRojo.setBackground(new java.awt.Color(204, 0, 0));
+        jToggleButtonColorRojo.setPreferredSize(new java.awt.Dimension(25, 25));
+        jToggleButtonColorRojo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonColorRojoActionPerformed(evt);
+            }
+        });
         panelColores.add(jToggleButtonColorRojo);
 
         jToggleButtonColorAzul.setBackground(new java.awt.Color(0, 0, 153));
+        jToggleButtonColorAzul.setPreferredSize(new java.awt.Dimension(25, 25));
+        jToggleButtonColorAzul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonColorAzulActionPerformed(evt);
+            }
+        });
         panelColores.add(jToggleButtonColorAzul);
 
         jToggleButtonColorBlanco.setBackground(new java.awt.Color(255, 255, 255));
+        jToggleButtonColorBlanco.setPreferredSize(new java.awt.Dimension(25, 25));
+        jToggleButtonColorBlanco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonColorBlancoActionPerformed(evt);
+            }
+        });
         panelColores.add(jToggleButtonColorBlanco);
 
         jToggleButtonColorAmarillo.setBackground(new java.awt.Color(255, 255, 0));
+        jToggleButtonColorAmarillo.setPreferredSize(new java.awt.Dimension(25, 25));
+        jToggleButtonColorAmarillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonColorAmarilloActionPerformed(evt);
+            }
+        });
         panelColores.add(jToggleButtonColorAmarillo);
 
         jToggleButtonColorVerde.setBackground(new java.awt.Color(0, 204, 51));
+        jToggleButtonColorVerde.setPreferredSize(new java.awt.Dimension(25, 25));
+        jToggleButtonColorVerde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonColorVerdeActionPerformed(evt);
+            }
+        });
         panelColores.add(jToggleButtonColorVerde);
 
         PanelPropiedades.add(panelColores, java.awt.BorderLayout.WEST);
@@ -134,7 +190,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         lienzoLayout.setVerticalGroup(
             lienzoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 194, Short.MAX_VALUE)
+            .addGap(0, 173, Short.MAX_VALUE)
         );
 
         pabelCentral.add(lienzo, java.awt.BorderLayout.CENTER);
@@ -212,6 +268,56 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jCheckBoxRellenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxRellenoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxRellenoActionPerformed
+
+    private void jToggleButtonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonPuntoActionPerformed
+        // Al hacer clik en el punto
+        this.jLabelBarraEstado.setText("Lapiz");
+    }//GEN-LAST:event_jToggleButtonPuntoActionPerformed
+
+    private void jToggleButtonLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonLineaActionPerformed
+        // Al hacer clik en la linea
+        this.jLabelBarraEstado.setText("Linea");
+    }//GEN-LAST:event_jToggleButtonLineaActionPerformed
+
+    private void jToggleButtonRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonRectanguloActionPerformed
+        // Al hacer clik en el rectangulo
+        this.jLabelBarraEstado.setText("Rectangulo");
+    }//GEN-LAST:event_jToggleButtonRectanguloActionPerformed
+
+    private void jToggleButtonOvaloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonOvaloActionPerformed
+        // Al hacer clik en el ovalo
+        this.jLabelBarraEstado.setText("Ovalo");
+    }//GEN-LAST:event_jToggleButtonOvaloActionPerformed
+
+    private void jToggleButtonColorNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorNegroActionPerformed
+        // Al hacer clik en el color negro
+        this.jLabelBarraEstado.setText("Color Negro");
+    }//GEN-LAST:event_jToggleButtonColorNegroActionPerformed
+
+    private void jToggleButtonColorRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorRojoActionPerformed
+        // Al hacer clik en el color rojo
+        this.jLabelBarraEstado.setText("Color Rojo");
+    }//GEN-LAST:event_jToggleButtonColorRojoActionPerformed
+
+    private void jToggleButtonColorAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAzulActionPerformed
+        // Al hacer clik en el color Azul
+        this.jLabelBarraEstado.setText("Color Azul");
+    }//GEN-LAST:event_jToggleButtonColorAzulActionPerformed
+
+    private void jToggleButtonColorBlancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorBlancoActionPerformed
+        // Al hacer clik en el color Blanco
+        this.jLabelBarraEstado.setText("Color Blanco");
+    }//GEN-LAST:event_jToggleButtonColorBlancoActionPerformed
+
+    private void jToggleButtonColorAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAmarilloActionPerformed
+        // Al hacer clik en el color Amarillo
+        this.jLabelBarraEstado.setText("Color Amarillo");
+    }//GEN-LAST:event_jToggleButtonColorAmarilloActionPerformed
+
+    private void jToggleButtonColorVerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorVerdeActionPerformed
+        // Al hacer clik en el color Verde
+        this.jLabelBarraEstado.setText("Color Verde");
+    }//GEN-LAST:event_jToggleButtonColorVerdeActionPerformed
 
 
 
