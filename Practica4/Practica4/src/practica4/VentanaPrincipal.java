@@ -39,7 +39,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonColorVerde = new javax.swing.JToggleButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
+        jMenuItemNuevo = new javax.swing.JMenuItem();
+        jMenuItemAbrirç = new javax.swing.JMenuItem();
+        jMenuItemGuardar = new javax.swing.JMenuItem();
         jMenuEdicion = new javax.swing.JMenu();
+        jCheckBoxMenuItemEdicion = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,9 +105,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         jMenuArchivo.setText("Archivo");
+
+        jMenuItemNuevo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItemNuevo.setText("Nuevo");
+        jMenuArchivo.add(jMenuItemNuevo);
+
+        jMenuItemAbrirç.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItemAbrirç.setText("Abrir");
+        jMenuArchivo.add(jMenuItemAbrirç);
+
+        jMenuItemGuardar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItemGuardar.setText("Guardar");
+        jMenuArchivo.add(jMenuItemGuardar);
+
         jMenuBar2.add(jMenuArchivo);
 
         jMenuEdicion.setText("Edición");
+
+        jCheckBoxMenuItemEdicion.setSelected(true);
+        jCheckBoxMenuItemEdicion.setText("Ver barra de estado");
+        jCheckBoxMenuItemEdicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItemEdicionActionPerformed(evt);
+            }
+        });
+        jMenuEdicion.add(jCheckBoxMenuItemEdicion);
+
         jMenuBar2.add(jMenuEdicion);
 
         setJMenuBar(jMenuBar2);
@@ -111,13 +138,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jCheckBoxMenuItemEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemEdicionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxMenuItemEdicionActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupHerramientasDibujo;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemEdicion;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenu jMenuEdicion;
+    private javax.swing.JMenuItem jMenuItemAbrirç;
+    private javax.swing.JMenuItem jMenuItemGuardar;
+    private javax.swing.JMenuItem jMenuItemNuevo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextFieldBarraInferior;
