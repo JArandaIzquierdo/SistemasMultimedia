@@ -45,7 +45,13 @@ public class Lienzo extends javax.swing.JPanel {
         super.paint (g);
         // Código (mensajes a g)
         if(p!=null){
-            //switch{
+            
+            /*switch(forma){
+                case 0:
+                    g.fillOval(p.x, p.y, 10, 10);
+                    
+            }*/
+           
                     
         g.fillOval(p.x, p.y, 10, 10);}
     }

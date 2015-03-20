@@ -1,5 +1,6 @@
 package practica4;
 
+import java.awt.Color;
 import java.io.File;
 import javax.swing.JFileChooser;
 
@@ -15,6 +16,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         this.setSize(500, 500);
+        
     }
 
     /**
@@ -297,6 +299,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jToggleButtonColorRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorRojoActionPerformed
         // Al hacer clik en el color rojo
         this.jLabelBarraEstado.setText("Color Rojo");
+        //Lienzo.
     }//GEN-LAST:event_jToggleButtonColorRojoActionPerformed
 
     private void jToggleButtonColorAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAzulActionPerformed
