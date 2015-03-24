@@ -26,6 +26,10 @@ public class Lienzo extends javax.swing.JPanel {
     boolean relleno=false; //Variable para el relleno
     //static final String forma;
     String forma;
+
+    public void setForma(String forma) {
+        this.forma = forma;
+    }
     
     public Color getColor() {
         return c;
@@ -54,11 +58,25 @@ public class Lienzo extends javax.swing.JPanel {
         
         if(p!=null){
             
-            /*switch(forma){
-                case "punto":
-                    g.fillOval(p.x, p.y, 10, 10);
+            switch(forma){
+                case "Punto":
+                    if(p!=null){
+                        g.fillOval(p.x, p.y, 10, 10);
+                    }
+                break;
                     
-            }*/
+                case "Cuadrado":
+                    if(pInicial!= null && pFinal!= null){
+                        int x = Math.min(pInicial.x, pFinal.y);
+                        int y = Math.min(pInicial.y, pFinal.x);
+                        int ancho = Math.abs(pInicial.y - pFinal.y);
+                        int alto = Math.abs(pInicial.x - pFinal.y);
+                    }
+                break;
+                    
+                    
+                    
+            }
            
                     
         g.fillOval(p.x, p.y, 10, 10);}
