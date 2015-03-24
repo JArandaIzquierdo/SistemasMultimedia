@@ -175,6 +175,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PanelPropiedades.add(panelColores, java.awt.BorderLayout.WEST);
 
         jCheckBoxRelleno.setText("Relleno");
+        jCheckBoxRelleno.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jCheckBoxRellenoStateChanged(evt);
+            }
+        });
         jCheckBoxRelleno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxRellenoActionPerformed(evt);
@@ -332,6 +337,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jLabelBarraEstado.setText("Color Verde");
         this.lienzo.setColor(Color.green);
     }//GEN-LAST:event_jToggleButtonColorVerdeActionPerformed
+
+    private void jCheckBoxRellenoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxRellenoStateChanged
+        // Checkbox utilizado para pintar figuras con o sin relleno
+        this.lienzo.setRelleno(this.jCheckBoxRelleno.isSelected());
+    }//GEN-LAST:event_jCheckBoxRellenoStateChanged
 
 
 

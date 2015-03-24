@@ -81,7 +81,8 @@ public class Lienzo extends javax.swing.JPanel {
                         int ancho = Math.abs(pInicial.y - pFinal.y);
                         int alto = Math.abs(pInicial.x - pFinal.x);
                         
-                        g.drawRect(x, y, alto, ancho);
+                        if(relleno)g.fillRect(x, y, alto, ancho);
+                        else g.drawRect(x, y, alto, ancho);
                     }
                 break;
                 
