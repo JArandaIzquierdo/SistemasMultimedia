@@ -15,7 +15,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
-        this.setSize(500, 500);
+        this.setSize(700, 700);
         
     }
 
@@ -184,7 +184,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pabelCentral.add(PanelPropiedades, java.awt.BorderLayout.SOUTH);
 
-        lienzo.setBackground(new java.awt.Color(255, 255, 255));
+        lienzo.setBackground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout lienzoLayout = new javax.swing.GroupLayout(lienzo);
         lienzo.setLayout(lienzoLayout);
@@ -276,21 +276,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jToggleButtonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonPuntoActionPerformed
         // Al hacer clik en el punto
         this.jLabelBarraEstado.setText("Lapiz");
+        this.lienzo.setForma("Punto");
     }//GEN-LAST:event_jToggleButtonPuntoActionPerformed
 
     private void jToggleButtonLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonLineaActionPerformed
         // Al hacer clik en la linea
         this.jLabelBarraEstado.setText("Linea");
+        this.lienzo.setForma("Linea");
     }//GEN-LAST:event_jToggleButtonLineaActionPerformed
 
     private void jToggleButtonRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonRectanguloActionPerformed
         // Al hacer clik en el rectangulo
         this.jLabelBarraEstado.setText("Rectangulo");
+        this.lienzo.setForma("Rectangulo");
     }//GEN-LAST:event_jToggleButtonRectanguloActionPerformed
 
     private void jToggleButtonOvaloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonOvaloActionPerformed
         // Al hacer clik en el ovalo
         this.jLabelBarraEstado.setText("Ovalo");
+        this.lienzo.setForma("Ovalo");
     }//GEN-LAST:event_jToggleButtonOvaloActionPerformed
 
     private void jToggleButtonColorNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorNegroActionPerformed

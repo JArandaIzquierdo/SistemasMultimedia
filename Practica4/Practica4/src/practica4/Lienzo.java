@@ -15,13 +15,17 @@ public class Lienzo extends javax.swing.JPanel {
      * Creates new form Lienzo
      */
     public Lienzo() {
+        this.c = black;
         initComponents();
     }
     
-    Point p;
-    Color c= black;
-    boolean relleno=false;
-    //static final int forma;
+    Point p; //Punto para dibujar solo puntos
+    Point pInicial;  //Punto inical
+    Point pFinal;  //Punto final
+    private Color c; 
+    boolean relleno=false; //Variable para el relleno
+    //static final String forma;
+    String forma;
     
     public Color getColor() {
         return c;
@@ -41,13 +45,17 @@ public class Lienzo extends javax.swing.JPanel {
 
     
     
+    @Override
     public void paint(Graphics g){
         super.paint (g);
+        
         // Código (mensajes a g)
+        g.setColor(c);
+        
         if(p!=null){
             
             /*switch(forma){
-                case 0:
+                case "punto":
                     g.fillOval(p.x, p.y, 10, 10);
                     
             }*/
