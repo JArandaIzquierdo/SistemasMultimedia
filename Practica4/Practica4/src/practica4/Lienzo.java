@@ -46,7 +46,13 @@ public class Lienzo extends javax.swing.JPanel {
     public void setRelleno(boolean relleno) {
         this.relleno = relleno;
     }
-
+    
+    //Metodo para borrar todo lo que hay en el lienzo
+    public void borrarPuntos(){
+        p=null;
+        pInicial=null;
+        pFinal=null;
+    }
     
     
     @Override
@@ -94,7 +100,8 @@ public class Lienzo extends javax.swing.JPanel {
                         int ancho = Math.abs(pInicial.y - pFinal.y);
                         int alto = Math.abs(pInicial.x - pFinal.x);
                         
-                        g.drawOval(x, y, alto, ancho);
+                        if (relleno)g.fillOval(x, y, alto, ancho);
+                        else g.drawOval(x, y, alto, ancho);
                     }
                     
                     

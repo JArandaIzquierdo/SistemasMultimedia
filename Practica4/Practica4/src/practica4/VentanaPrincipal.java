@@ -210,6 +210,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuItemNuevo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemNuevo.setText("Nuevo");
+        jMenuItemNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemNuevoActionPerformed(evt);
+            }
+        });
         jMenuArchivo.add(jMenuItemNuevo);
 
         jMenuItemAbrirç.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
@@ -236,9 +241,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jCheckBoxMenuItemEdicion.setSelected(true);
         jCheckBoxMenuItemEdicion.setText("Ver barra de estado");
-        jCheckBoxMenuItemEdicion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxMenuItemEdicionActionPerformed(evt);
+        jCheckBoxMenuItemEdicion.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jCheckBoxMenuItemEdicionStateChanged(evt);
             }
         });
         jMenuEdicion.add(jCheckBoxMenuItemEdicion);
@@ -249,10 +254,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jCheckBoxMenuItemEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemEdicionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxMenuItemEdicionActionPerformed
 
     private void jMenuItemAbrirçActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAbrirçActionPerformed
         // TODO add your handling code here:
@@ -342,6 +343,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // Checkbox utilizado para pintar figuras con o sin relleno
         this.lienzo.setRelleno(this.jCheckBoxRelleno.isSelected());
     }//GEN-LAST:event_jCheckBoxRellenoStateChanged
+
+    private void jCheckBoxMenuItemEdicionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemEdicionStateChanged
+        // Con este checkBox controlamos que la barra de estado sea visible o no
+        this.jLabelBarraEstado.setVisible(this.jCheckBoxMenuItemEdicion.isSelected());
+    }//GEN-LAST:event_jCheckBoxMenuItemEdicionStateChanged
+
+    private void jMenuItemNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevoActionPerformed
+        // Este item elimina todo lo pintado en el lienzo
+        this.lienzo.borrarPuntos();
+        repaint();
+    }//GEN-LAST:event_jMenuItemNuevoActionPerformed
 
 
 
