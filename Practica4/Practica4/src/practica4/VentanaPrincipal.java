@@ -184,6 +184,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pabelCentral.add(PanelPropiedades, java.awt.BorderLayout.SOUTH);
 
+        lienzo.setBackground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout lienzoLayout = new javax.swing.GroupLayout(lienzo);
         lienzo.setLayout(lienzoLayout);
         lienzoLayout.setHorizontalGroup(
@@ -294,32 +296,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jToggleButtonColorNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorNegroActionPerformed
         // Al hacer clik en el color negro
         this.jLabelBarraEstado.setText("Color Negro");
+        this.lienzo.setColor(Color.black);
     }//GEN-LAST:event_jToggleButtonColorNegroActionPerformed
 
     private void jToggleButtonColorRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorRojoActionPerformed
         // Al hacer clik en el color rojo
         this.jLabelBarraEstado.setText("Color Rojo");
-        //Lienzo.
+        this.lienzo.setColor(Color.red);        
     }//GEN-LAST:event_jToggleButtonColorRojoActionPerformed
 
     private void jToggleButtonColorAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAzulActionPerformed
         // Al hacer clik en el color Azul
         this.jLabelBarraEstado.setText("Color Azul");
+        this.lienzo.setColor(Color.blue);
     }//GEN-LAST:event_jToggleButtonColorAzulActionPerformed
 
     private void jToggleButtonColorBlancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorBlancoActionPerformed
         // Al hacer clik en el color Blanco
         this.jLabelBarraEstado.setText("Color Blanco");
+        this.lienzo.setColor(Color.white);
     }//GEN-LAST:event_jToggleButtonColorBlancoActionPerformed
 
     private void jToggleButtonColorAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAmarilloActionPerformed
         // Al hacer clik en el color Amarillo
         this.jLabelBarraEstado.setText("Color Amarillo");
+        this.lienzo.setColor(Color.yellow);
     }//GEN-LAST:event_jToggleButtonColorAmarilloActionPerformed
 
     private void jToggleButtonColorVerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorVerdeActionPerformed
         // Al hacer clik en el color Verde
         this.jLabelBarraEstado.setText("Color Verde");
+        this.lienzo.setColor(Color.green);
     }//GEN-LAST:event_jToggleButtonColorVerdeActionPerformed
 
 
