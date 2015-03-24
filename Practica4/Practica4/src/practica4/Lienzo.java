@@ -76,20 +76,24 @@ public class Lienzo extends javax.swing.JPanel {
                 //En el caso de dibujar un rectangulo    
                 case "Rectangulo":
                     if(pInicial!= null && pFinal!= null){
-                        int x = Math.min(pInicial.x, pFinal.y);
-                        int y = Math.min(pInicial.y, pFinal.x);
+                        int x = Math.min(pInicial.x, pFinal.x);
+                        int y = Math.min(pInicial.y, pFinal.y);
                         int ancho = Math.abs(pInicial.y - pFinal.y);
-                        int alto = Math.abs(pInicial.x - pFinal.y);
+                        int alto = Math.abs(pInicial.x - pFinal.x);
+                        
+                        g.drawRect(x, y, alto, ancho);
                     }
                 break;
                 
                 //En el caso de dibujar una elipse
                 case"Elipse":
                     if(pInicial!= null && pFinal!= null){
-                        int x = Math.min(pInicial.x, pFinal.y);
-                        int y = Math.min(pInicial.y, pFinal.x);
+                        int x = Math.min(pInicial.x, pFinal.x);
+                        int y = Math.min(pInicial.y, pFinal.y);
                         int ancho = Math.abs(pInicial.y - pFinal.y);
-                        int alto = Math.abs(pInicial.x - pFinal.y);
+                        int alto = Math.abs(pInicial.x - pFinal.x);
+                        
+                        g.drawOval(x, y, alto, ancho);
                     }
                     
                     
