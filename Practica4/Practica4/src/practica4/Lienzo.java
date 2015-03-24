@@ -59,13 +59,22 @@ public class Lienzo extends javax.swing.JPanel {
         if(p!=null){
             
             switch(forma){
+                //En el caso de dibujar un punto
                 case "Punto":
                     if(p!=null){
                         g.fillOval(p.x, p.y, 10, 10);
                     }
                 break;
+                
+                //En el caso de dibujar una linea    
+                case "Linea":
+                    if(pInicial!= null && pFinal!= null){
+                        g.drawLine(pInicial.x,pInicial.y,pFinal.x, pFinal.y);
+                    }
+                break;
                     
-                case "Cuadrado":
+                //En el caso de dibujar un rectangulo    
+                case "Rectangulo":
                     if(pInicial!= null && pFinal!= null){
                         int x = Math.min(pInicial.x, pFinal.y);
                         int y = Math.min(pInicial.y, pFinal.x);
@@ -73,6 +82,15 @@ public class Lienzo extends javax.swing.JPanel {
                         int alto = Math.abs(pInicial.x - pFinal.y);
                     }
                 break;
+                
+                //En el caso de dibujar una elipse
+                case"Elipse":
+                    if(pInicial!= null && pFinal!= null){
+                        int x = Math.min(pInicial.x, pFinal.y);
+                        int y = Math.min(pInicial.y, pFinal.x);
+                        int ancho = Math.abs(pInicial.y - pFinal.y);
+                        int alto = Math.abs(pInicial.x - pFinal.y);
+                    }
                     
                     
                     
@@ -90,7 +108,18 @@ public class Lienzo extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
         addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                formMouseReleased(evt);
+            }
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
             }
@@ -109,10 +138,27 @@ public class Lienzo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        // Cuando haces click en el Lienzo
+        // En nuestro caso, utilizamos mouseClicked para dibujar puntos
         p=evt.getPoint();
         this.repaint();
     }//GEN-LAST:event_formMouseClicked
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        // Utilizamos MousePressed para tener las coordenadas del punto inicial
+        pInicial=evt.getPoint();
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
+        // utilizamos MouseReleasd para saber el punto final y tras esto, pintar
+        pFinal=evt.getPoint();
+        this.repaint();
+    }//GEN-LAST:event_formMouseReleased
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        // 
+        pFinal=evt.getPoint();
+        this.repaint();
+    }//GEN-LAST:event_formMouseDragged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

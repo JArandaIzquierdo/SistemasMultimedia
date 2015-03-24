@@ -293,8 +293,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jToggleButtonOvaloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonOvaloActionPerformed
         // Al hacer clik en el ovalo
-        this.jLabelBarraEstado.setText("Ovalo");
-        this.lienzo.setForma("Ovalo");
+        this.jLabelBarraEstado.setText("Elipse");
+        this.lienzo.setForma("Elipse");
     }//GEN-LAST:event_jToggleButtonOvaloActionPerformed
 
     private void jToggleButtonColorNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorNegroActionPerformed
