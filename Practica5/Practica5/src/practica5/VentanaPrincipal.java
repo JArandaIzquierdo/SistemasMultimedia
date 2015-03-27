@@ -130,6 +130,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             rectangulo = new Rectangle(p);
             vShape.add(rectangulo);//se agrega el rectangulo al vector
         //}
+            //hay que llamar al getSelectec
+            /*if (editar) rectangulo = (Rectangle) getSelectecShape(evt.getPoint());
+            else{
+                p= evt.getPoint();
+                rectangulo=new Rectangle (p);
+                vShape.add(rectangle);
+            */
     }//GEN-LAST:event_formMousePressed
 
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
