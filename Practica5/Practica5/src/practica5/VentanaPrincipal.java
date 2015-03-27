@@ -3,6 +3,7 @@ package practica5;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Arc2D;
+import java.awt.geom.CubicCurve2D;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
@@ -65,6 +66,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //QuadCurve
         QuadCurve2D quad =new QuadCurve2D.Double(40, 40, 80, 300, 400, 400);
         g2d.draw(quad);
+        
+        //Cubicurve
+        CubicCurve2D cubi=new CubicCurve2D.Double(300, 300, 500, 600, 700, 650, 700, 700);
+        g2d.draw(cubi);
     }
     /**
      * This method is called from within the constructor to initialize the form.
