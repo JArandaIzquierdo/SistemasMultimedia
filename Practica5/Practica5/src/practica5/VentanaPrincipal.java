@@ -2,9 +2,11 @@ package practica5;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.geom.Arc2D;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.geom.QuadCurve2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
 
@@ -55,6 +57,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //Elipse
         Ellipse2D elipse=new Ellipse2D.Double(200, 300, 100, 50);
         g2d.draw(elipse);
+        
+        //Arco 2D
+        Arc2D arco = new Arc2D.Double(400, 400, 70, 90, 90, 135, Arc2D.OPEN);
+        g2d.draw(arco);
+        
+        //QuadCurve
+        QuadCurve2D quad =new QuadCurve2D.Double(40, 40, 80, 300, 400, 400);
+        g2d.draw(quad);
     }
     /**
      * This method is called from within the constructor to initialize the form.
