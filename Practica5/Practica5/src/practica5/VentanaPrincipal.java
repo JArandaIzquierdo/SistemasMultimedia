@@ -2,9 +2,12 @@ package practica5;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.geom.Arc2D;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.GeneralPath;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.QuadCurve2D;
@@ -29,12 +32,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
     }
+    Point p;//punto
+    Rectangle rectangulo;//rectangulo
+    
     
     public void paint(Graphics g){
         super.paint (g);
         Graphics2D g2d =(Graphics2D)g;
         
-        pruebaShape(g2d);
+        rectanguloConEventos(g2d);
+        //pruebaShape(g2d);
         
         
     }
@@ -70,6 +77,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //Cubicurve
         CubicCurve2D cubi=new CubicCurve2D.Double(300, 300, 500, 600, 700, 650, 700, 700);
         g2d.draw(cubi);
+        
+        //Trazo libre
+        //GeneralPath trazoLibre= new GeneralPath
+    }
+    public void rectanguloConEventos(Graphics2D g2d){
+        if(rectangulo!=null) g2d.draw(rectangulo);
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -81,6 +95,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,6 +114,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        // MousePressed
+        p = evt.getPoint();
+        rectangulo = new Rectangle(p);
+    }//GEN-LAST:event_formMousePressed
 
 
 
