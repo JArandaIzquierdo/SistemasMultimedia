@@ -62,8 +62,45 @@ public class Lienzo extends javax.swing.JPanel {
         // Código (mensajes a g)
         g.setColor(c);
         
+        if (forma=="Punto"){
+            if(p!=null){
+                g.fillOval(p.x, p.y, 10, 10);
+            }
+        }
+        
+        else if (forma=="Linea"){
+            if(pInicial!= null && pFinal!= null){
+                g.drawLine(pInicial.x,pInicial.y,pFinal.x, pFinal.y);
+            }
+        }
+        
+        else if(forma=="Rectangulo"){
+            if(pInicial!= null && pFinal!= null){
+                int x = Math.min(pInicial.x, pFinal.x);
+                int y = Math.min(pInicial.y, pFinal.y);
+                int ancho = Math.abs(pInicial.y - pFinal.y);
+                int alto = Math.abs(pInicial.x - pFinal.x);
+
+                if(relleno)g.fillRect(x, y, alto, ancho);
+                else g.drawRect(x, y, alto, ancho);
+            }
+        }
+        
+        else if(forma=="Elipse"){
+            if(pInicial!= null && pFinal!= null){
+                int x = Math.min(pInicial.x, pFinal.x);
+                int y = Math.min(pInicial.y, pFinal.y);
+                int ancho = Math.abs(pInicial.y - pFinal.y);
+                int alto = Math.abs(pInicial.x - pFinal.x);
+
+                if (relleno)g.fillOval(x, y, alto, ancho);
+                else g.drawOval(x, y, alto, ancho);
+            }
+        }
             
-            switch(forma){
+            //Funciona bien pero no muestra los botones en la ejecucion
+        
+           /* switch(forma){
                 //En el caso de dibujar un punto
                 case "Punto":
                     if(p!=null){
@@ -103,13 +140,9 @@ public class Lienzo extends javax.swing.JPanel {
                         else g.drawOval(x, y, alto, ancho);
                     }
                   break;  
-                    
-                    
-            }
-           
-                    
+                                        
+            }   */     
         
-    
     }
     /**
      * This method is called from within the constructor to initialize the form.
