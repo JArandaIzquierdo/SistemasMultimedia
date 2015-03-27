@@ -25,7 +25,7 @@ public class Lienzo extends javax.swing.JPanel {
     private Color c; //Variable para el color
     boolean relleno=false; //Variable para el relleno
     //static final String forma;
-    String forma;
+    String forma="punto";
 
     public void setForma(String forma) {
         this.forma = forma;
