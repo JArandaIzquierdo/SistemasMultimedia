@@ -61,19 +61,19 @@ public class Lienzo extends javax.swing.JPanel {
         
         // Código (mensajes a g)
         g.setColor(c);
-        
+        //Si elegimos la forma punto:
         if (forma=="Punto"){
             if(p!=null){
                 g.fillOval(p.x, p.y, 10, 10);
             }
         }
-        
+        //Si elegimos la forma linea:
         else if (forma=="Linea"){
             if(pInicial!= null && pFinal!= null){
                 g.drawLine(pInicial.x,pInicial.y,pFinal.x, pFinal.y);
             }
         }
-        
+        //Si elegimos la forma rectangulo:
         else if(forma=="Rectangulo"){
             if(pInicial!= null && pFinal!= null){
                 int x = Math.min(pInicial.x, pFinal.x);
@@ -85,7 +85,7 @@ public class Lienzo extends javax.swing.JPanel {
                 else g.drawRect(x, y, alto, ancho);
             }
         }
-        
+        //Si elegimos la forma elipse:
         else if(forma=="Elipse"){
             if(pInicial!= null && pFinal!= null){
                 int x = Math.min(pInicial.x, pFinal.x);
