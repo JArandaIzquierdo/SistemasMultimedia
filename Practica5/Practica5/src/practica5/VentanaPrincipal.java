@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.Shape;
 import java.awt.geom.Arc2D;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.Ellipse2D;
@@ -13,6 +14,8 @@ import java.awt.geom.Point2D;
 import java.awt.geom.QuadCurve2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -34,16 +37,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
     Point p;//punto
     Rectangle rectangulo;//rectangulo
+    List<Shape> vShape = new ArrayList();//Para guardar los rectangulos
     
     
     public void paint(Graphics g){
         super.paint (g);
         Graphics2D g2d =(Graphics2D)g;
         
-        rectanguloConEventos(g2d);
         //pruebaShape(g2d);
+        if(rectangulo!=null) g2d.draw(rectangulo);
         
-        
+        for(Shape s:vShape) g2d.draw(s);//dibuja lo que hay en el vector
     }
     
     public void pruebaShape(Graphics2D g2d){
@@ -81,10 +85,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //Trazo libre
         //GeneralPath trazoLibre= new GeneralPath
     }
-    public void rectanguloConEventos(Graphics2D g2d){
-        if(rectangulo!=null) g2d.draw(rectangulo);
-        
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,9 +95,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 formMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                formMouseReleased(evt);
             }
         });
 
@@ -118,8 +126,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
         // MousePressed
         p = evt.getPoint();
-        rectangulo = new Rectangle(p);
+        //if (rectangulo instanceof Rectangle){//para saber que forma es
+            rectangulo = new Rectangle(p);
+            vShape.add(rectangulo);//se agrega el rectangulo al vector
+        //}
     }//GEN-LAST:event_formMousePressed
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        // MouseDrager
+        rectangulo.setFrameFromDiagonal(p, evt.getPoint());
+        this.repaint();
+    }//GEN-LAST:event_formMouseDragged
+
+    private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
+        // MouseRealiese
+        this. formMouseDragged(evt);
+    }//GEN-LAST:event_formMouseReleased
 
 
 
