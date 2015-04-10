@@ -107,12 +107,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             // TODO: Código para crear transformación
             Rectangle r = new Rectangle(430, 190, 120, 120);
             g2d.draw(r); //Dibujamos rectángulo sin transformación
-            
+           
+            //Lo rotamos tomando las coordenadas del centro del rectangulo
             at = AffineTransform.getRotateInstance(Math.toRadians(45.0),r.getCenterX(),r.getCenterY());
             g2d.setTransform(at);
             g2d.fill(r); //Dibujamos rectángulo con transformación
-
+            
+            //Lo dibujamos a escala pero se despaza la posicion
             at = AffineTransform.getScaleInstance(0.5,0.5);
+            g2d.setTransform(at);
+            g2d.draw(r);
+            
+            //Arreglamos el desplazamiento
+            at.setToIdentity();
+            at.translate(r.getCenterX(),r.getCenterY());
+            at.scale(0.5,0.5);
+            at.translate(-r.getCenterX(),-r.getCenterY());
             g2d.setTransform(at);
             g2d.draw(r);
             
