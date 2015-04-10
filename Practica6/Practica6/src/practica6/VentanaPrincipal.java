@@ -1,12 +1,15 @@
 package practica6;
 
+import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Composite;
 import java.awt.Font;
+import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Paint;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Shape;
@@ -59,7 +62,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public void paint(Graphics g){
            super.paint(g);
            Graphics2D g2d = (Graphics2D)g;
-           this.setAtributos(g2d);
+           this.setAtributos(g2d);//LAmamos al metodo setAtributos
            List<Shape> vShape = new ArrayList();//Para guardar los rectangulos
            for(Shape s:vShape) g2d.draw(s);
 }
@@ -85,11 +88,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             g2d.setPaint(relleno);
             g2d.draw(new Rectangle(170,40,120,120));//Rectangulo sin relleno
             g2d.fill(new Rectangle(300,40,120,120));//Rectangulo con relleno
+            
+            //Caso de relleno con degradado
+            Point pc1 = new Point(430,40),pc2 = new Point(550,160);
+            relleno = new GradientPaint(pc1, Color.RED, pc2, Color.BLUE); g2d.setPaint(relleno);
+            g2d.fill(new Rectangle(430,40,120,120));
            
             //Composición
             Composite composicion = null;
+            
             // TODO: Código para crear composición
+            composicion = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f);
             g2d.setComposite(composicion);
+            g2d.fill(new Rectangle(190, 100, 200, 120));
            
             //Transformación
             AffineTransform transformacion = null;
