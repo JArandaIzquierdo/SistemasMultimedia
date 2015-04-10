@@ -14,10 +14,12 @@ import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.Stroke;
+import java.awt.font.TextAttribute;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -129,7 +131,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             //Fuente
             Font fuente = null;
             // TODO: Código para crear fuente
+            fuente = new Font("Arial", Font.BOLD | Font.ITALIC, 45);
             g2d.setFont(fuente);
+            g2d.drawString("Hola", 30, 220);
+            
+//            Map atributosTexto = font.getAttributes();
+//            atributosTexto.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+//            g2d.setFont(font.deriveFont(atributosTexto));
+//            g2d.drawString("mundo", 30, 260);
            
             //Renderización
             RenderingHints render = null;
