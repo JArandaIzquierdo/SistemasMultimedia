@@ -5,6 +5,7 @@
  */
 package practica6;
 
+import java.awt.BasicStroke;
 import java.awt.Composite;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -14,6 +15,7 @@ import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.Stroke;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Line2D;
 
 /**
  *
@@ -59,7 +61,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
            super.paint(g);
            Graphics2D g2d = (Graphics2D)g;
            this.setAtributos(g2d);
-        Iterable<Shape> vShape = null;
+           Iterable<Shape> vShape = null;
            for(Shape s:vShape) g2d.draw(s);
 }
          private void setAtributos(Graphics2D g2d){
@@ -67,7 +69,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             //Trazo
             Stroke trazo=null;
             // TODO: Código para crear trazo
+            float patronDiscontinuidad[] = {15.0f, 15.0f};
+            trazo = new BasicStroke(10.0f,
+                                 BasicStroke.CAP_ROUND,
+                                 BasicStroke.JOIN_MITER, 1.0f,
+                                 patronDiscontinuidad, 0.0f);
             g2d.setStroke(trazo);
+            
+            //Pintamos una forma de prueba
+            g2d.draw(new Line2D.Float(40,40,160,160));
             
             //Relleno
             Paint relleno=null;
