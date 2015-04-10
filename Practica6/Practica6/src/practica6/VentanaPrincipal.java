@@ -103,9 +103,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             g2d.fill(new Rectangle(190, 100, 200, 120));
            
             //Transformación
-            AffineTransform transformacion = null;
+            AffineTransform at = null;
             // TODO: Código para crear transformación
-            g2d.setTransform(transformacion);
+            Rectangle r = new Rectangle(430, 190, 120, 120);
+            g2d.draw(r); //Dibujamos rectángulo sin transformación
+            
+            at = AffineTransform.getRotateInstance(Math.toRadians(45.0),r.getCenterX(),r.getCenterY());
+            g2d.setTransform(at);
+            g2d.fill(r); //Dibujamos rectángulo con transformación
+
+            at = AffineTransform.getScaleInstance(0.5,0.5);
+            g2d.setTransform(at);
+            g2d.draw(r);
             
             //Fuente
             Font fuente = null;
