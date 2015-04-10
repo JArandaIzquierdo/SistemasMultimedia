@@ -1,25 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package practica6;
 
 import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Composite;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Paint;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.Stroke;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
- * @author JaviAir
+ * @author Javier Aranada
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
@@ -61,7 +60,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
            super.paint(g);
            Graphics2D g2d = (Graphics2D)g;
            this.setAtributos(g2d);
-           Iterable<Shape> vShape = null;
+           List<Shape> vShape = new ArrayList();//Para guardar los rectangulos
            for(Shape s:vShape) g2d.draw(s);
 }
          private void setAtributos(Graphics2D g2d){
@@ -69,7 +68,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             //Trazo
             Stroke trazo=null;
             // TODO: Código para crear trazo
-            float patronDiscontinuidad[] = {15.0f, 15.0f};
+            float patronDiscontinuidad[] = {15.0f, 15.0f};//Creamos el tipo de discontinuidad
             trazo = new BasicStroke(10.0f,
                                  BasicStroke.CAP_ROUND,
                                  BasicStroke.JOIN_MITER, 1.0f,
@@ -82,7 +81,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             //Relleno
             Paint relleno=null;
             // TODO: Código para crear relleno
+            relleno = new Color(255, 100, 0);//Le damos un color al relleno
             g2d.setPaint(relleno);
+            g2d.draw(new Rectangle(170,40,120,120));//Rectangulo sin relleno
+            g2d.fill(new Rectangle(300,40,120,120));//Rectangulo con relleno
            
             //Composición
             Composite composicion = null;
@@ -108,6 +110,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             Shape clip = null;
             // TODO: Código para crear clip
             g2d.setClip(clip);
+            
+            /* paso 8
+            concatenar operaciones,
+            1º transladar el cuadrado
+            2º tenemos que escalarlo
+            3º lo traemos de vuelta
+            
+            */
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
