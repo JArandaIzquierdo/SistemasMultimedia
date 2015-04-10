@@ -5,6 +5,16 @@
  */
 package practica6;
 
+import java.awt.Composite;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Paint;
+import java.awt.RenderingHints;
+import java.awt.Shape;
+import java.awt.Stroke;
+import java.awt.geom.AffineTransform;
+
 /**
  *
  * @author JaviAir
@@ -43,7 +53,52 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    
+    
+    public void paint(Graphics g){
+           super.paint(g);
+           Graphics2D g2d = (Graphics2D)g;
+           this.setAtributos(g2d);
+        Iterable<Shape> vShape = null;
+           for(Shape s:vShape) g2d.draw(s);
+}
+         private void setAtributos(Graphics2D g2d){
+           
+            //Trazo
+            Stroke trazo=null;
+            // TODO: Código para crear trazo
+            g2d.setStroke(trazo);
+            
+            //Relleno
+            Paint relleno=null;
+            // TODO: Código para crear relleno
+            g2d.setPaint(relleno);
+           
+            //Composición
+            Composite composicion = null;
+            // TODO: Código para crear composición
+            g2d.setComposite(composicion);
+           
+            //Transformación
+            AffineTransform transformacion = null;
+            // TODO: Código para crear transformación
+            g2d.setTransform(transformacion);
+            
+            //Fuente
+            Font fuente = null;
+            // TODO: Código para crear fuente
+            g2d.setFont(fuente);
+           
+            //Renderización
+            RenderingHints render = null;
+            // TODO: Código para crear renderizado
+            g2d.setRenderingHints(render);
+           
+            //Recorte
+            Shape clip = null;
+            // TODO: Código para crear clip
+            g2d.setClip(clip);
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
