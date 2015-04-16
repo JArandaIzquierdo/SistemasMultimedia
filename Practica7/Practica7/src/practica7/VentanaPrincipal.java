@@ -45,7 +45,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonColorAmarillo = new javax.swing.JToggleButton();
         jToggleButtonColorVerde = new javax.swing.JToggleButton();
         jCheckBoxRelleno = new javax.swing.JCheckBox();
-        lienzo = new practica7.Lienzo();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuItemNuevo = new javax.swing.JMenuItem();
@@ -189,20 +189,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pabelCentral.add(PanelPropiedades, java.awt.BorderLayout.SOUTH);
 
-        lienzo.setBackground(new java.awt.Color(153, 153, 153));
-
-        javax.swing.GroupLayout lienzoLayout = new javax.swing.GroupLayout(lienzo);
-        lienzo.setLayout(lienzoLayout);
-        lienzoLayout.setHorizontalGroup(
-            lienzoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        lienzoLayout.setVerticalGroup(
-            lienzoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 173, Short.MAX_VALUE)
         );
 
-        pabelCentral.add(lienzo, java.awt.BorderLayout.CENTER);
+        pabelCentral.add(jDesktopPane1, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(pabelCentral, java.awt.BorderLayout.CENTER);
 
@@ -282,66 +280,66 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jToggleButtonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonPuntoActionPerformed
         // Al hacer clik en el punto
         this.jLabelBarraEstado.setText("Lapiz");
-        this.lienzo.setForma("Punto");
+        //this.lienzo.setForma("Punto");
     }//GEN-LAST:event_jToggleButtonPuntoActionPerformed
 
     private void jToggleButtonLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonLineaActionPerformed
         // Al hacer clik en la linea
         this.jLabelBarraEstado.setText("Linea");
-        this.lienzo.setForma("Linea");
+        //this.lienzo.setForma("Linea");
     }//GEN-LAST:event_jToggleButtonLineaActionPerformed
 
     private void jToggleButtonRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonRectanguloActionPerformed
         // Al hacer clik en el rectangulo
         this.jLabelBarraEstado.setText("Rectangulo");
-        this.lienzo.setForma("Rectangulo");
+        //this.lienzo.setForma("Rectangulo");
     }//GEN-LAST:event_jToggleButtonRectanguloActionPerformed
 
     private void jToggleButtonOvaloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonOvaloActionPerformed
         // Al hacer clik en el ovalo
         this.jLabelBarraEstado.setText("Elipse");
-        this.lienzo.setForma("Elipse");
+        //this.lienzo.setForma("Elipse");
     }//GEN-LAST:event_jToggleButtonOvaloActionPerformed
 
     private void jToggleButtonColorNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorNegroActionPerformed
         // Al hacer clik en el color negro
         this.jLabelBarraEstado.setText("Color Negro");
-        this.lienzo.setColor(Color.black);
+        //this.lienzo.setColor(Color.black);
     }//GEN-LAST:event_jToggleButtonColorNegroActionPerformed
 
     private void jToggleButtonColorRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorRojoActionPerformed
         // Al hacer clik en el color rojo
         this.jLabelBarraEstado.setText("Color Rojo");
-        this.lienzo.setColor(Color.red);        
+        //this.lienzo.setColor(Color.red);        
     }//GEN-LAST:event_jToggleButtonColorRojoActionPerformed
 
     private void jToggleButtonColorAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAzulActionPerformed
         // Al hacer clik en el color Azul
         this.jLabelBarraEstado.setText("Color Azul");
-        this.lienzo.setColor(Color.blue);
+        //this.lienzo.setColor(Color.blue);
     }//GEN-LAST:event_jToggleButtonColorAzulActionPerformed
 
     private void jToggleButtonColorBlancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorBlancoActionPerformed
         // Al hacer clik en el color Blanco
         this.jLabelBarraEstado.setText("Color Blanco");
-        this.lienzo.setColor(Color.white);
+        //this.lienzo.setColor(Color.white);
     }//GEN-LAST:event_jToggleButtonColorBlancoActionPerformed
 
     private void jToggleButtonColorAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAmarilloActionPerformed
         // Al hacer clik en el color Amarillo
         this.jLabelBarraEstado.setText("Color Amarillo");
-        this.lienzo.setColor(Color.yellow);
+        //this.lienzo.setColor(Color.yellow);
     }//GEN-LAST:event_jToggleButtonColorAmarilloActionPerformed
 
     private void jToggleButtonColorVerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorVerdeActionPerformed
         // Al hacer clik en el color Verde
         this.jLabelBarraEstado.setText("Color Verde");
-        this.lienzo.setColor(Color.green);
+        //this.lienzo.setColor(Color.green);
     }//GEN-LAST:event_jToggleButtonColorVerdeActionPerformed
 
     private void jCheckBoxRellenoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxRellenoStateChanged
         // Checkbox utilizado para pintar figuras con o sin relleno
-        this.lienzo.setRelleno(this.jCheckBoxRelleno.isSelected());
+        //this.lienzo.setRelleno(this.jCheckBoxRelleno.isSelected());
     }//GEN-LAST:event_jCheckBoxRellenoStateChanged
 
     private void jCheckBoxMenuItemEdicionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemEdicionStateChanged
@@ -351,7 +349,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevoActionPerformed
         // Este item elimina todo lo pintado en el lienzo
-        this.lienzo.borrarPuntos();
+        //this.lienzo.borrarPuntos();
         repaint();
     }//GEN-LAST:event_jMenuItemNuevoActionPerformed
 
@@ -362,6 +360,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroupHerramientasDibujo;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemEdicion;
     private javax.swing.JCheckBox jCheckBoxRelleno;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabelBarraEstado;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar2;
@@ -380,7 +379,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButtonPunto;
     private javax.swing.JToggleButton jToggleButtonRectangulo;
     private javax.swing.JToolBar jToolBar1;
-    private practica7.Lienzo lienzo;
     private javax.swing.JPanel pabelCentral;
     private javax.swing.JPanel panelColores;
     // End of variables declaration//GEN-END:variables
