@@ -331,6 +331,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jMenuItemNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevoActionPerformed
         // Este item elimina todo lo pintado en el lienzo
         //this.lienzo.borrarPuntos();
+        //Creamos una nueva VentanaInterna
         VentanaInterna vi = new VentanaInterna(); 
         escritorio.add(vi);
                       vi.setVisible(true);
