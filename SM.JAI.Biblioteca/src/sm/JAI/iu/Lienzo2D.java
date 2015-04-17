@@ -5,6 +5,15 @@
  */
 package sm.JAI.iu;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Paint;
+import java.awt.Shape;
+import java.awt.Stroke;
+import java.util.ArrayList;
+import java.util.List;
+import static javafx.scene.paint.Color.color;
+
 /**
  *
  * @author JaviAir
@@ -18,6 +27,23 @@ public class Lienzo2D extends javax.swing.JPanel {
         initComponents();
     }
 
+    Paint color;
+    Stroke stroke;
+    boolean relleno;
+    List<Shape> vShape = new ArrayList();
+    
+    public void paint(Graphics g){
+                      super.paint(g);
+                      Graphics2D g2d = (Graphics2D)g;
+                      g2d.setPaint(color);
+                      g2d.setStroke(stroke);
+                      //g2d.setComposite(); y otra mas
+                      for(Shape s:vShape) {
+                        if(relleno) g2d.fill(s);
+                        g2d.draw(s);
+                      }
+}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
