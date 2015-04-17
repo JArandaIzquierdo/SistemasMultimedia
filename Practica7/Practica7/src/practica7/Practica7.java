@@ -1,10 +1,12 @@
 package practica7;
 
+import practica7.VentanaPrincipal;
+
 /**
  *
  * @author Javier Aranda
  */
-public class Practica4 {
+public class Practica7 {
 
     /**
      * @param args the command line arguments

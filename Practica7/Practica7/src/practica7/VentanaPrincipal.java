@@ -29,14 +29,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroupHerramientasDibujo = new javax.swing.ButtonGroup();
-        jToolBar1 = new javax.swing.JToolBar();
+        jToolBarHerramientasDibujo = new javax.swing.JToolBar();
         jToggleButtonPunto = new javax.swing.JToggleButton();
         jToggleButtonLinea = new javax.swing.JToggleButton();
         jToggleButtonRectangulo = new javax.swing.JToggleButton();
         jToggleButtonOvalo = new javax.swing.JToggleButton();
         jLabelBarraEstado = new javax.swing.JLabel();
         pabelCentral = new javax.swing.JPanel();
-        PanelPropiedades = new javax.swing.JPanel();
+        jToolBarHerramientasAbajo = new javax.swing.JToolBar();
+        jPanelHerramientasAbajo = new javax.swing.JPanel();
+        jPanelColor = new javax.swing.JPanel();
         panelColores = new javax.swing.JPanel();
         jToggleButtonColorNegro = new javax.swing.JToggleButton();
         jToggleButtonColorRojo = new javax.swing.JToggleButton();
@@ -44,9 +46,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonColorBlanco = new javax.swing.JToggleButton();
         jToggleButtonColorAmarillo = new javax.swing.JToggleButton();
         jToggleButtonColorVerde = new javax.swing.JToggleButton();
+        jPanelGrosor = new javax.swing.JPanel();
+        jSpinner1 = new javax.swing.JSpinner();
+        jPanelCheksBox = new javax.swing.JPanel();
         jCheckBoxRelleno = new javax.swing.JCheckBox();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        jMenuBar2 = new javax.swing.JMenuBar();
+        jCheckBoxTrans = new javax.swing.JCheckBox();
+        jCheckBoxAlisar = new javax.swing.JCheckBox();
+        jCheckBoxEditar = new javax.swing.JCheckBox();
+        escritorio = new javax.swing.JDesktopPane();
+        jMenuBarArchivoEdicion = new javax.swing.JMenuBar();
         jMenuArchivo = new javax.swing.JMenu();
         jMenuItemNuevo = new javax.swing.JMenuItem();
         jMenuItemAbrirç = new javax.swing.JMenuItem();
@@ -56,7 +64,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToolBar1.setRollover(true);
+        jToolBarHerramientasDibujo.setRollover(true);
 
         buttonGroupHerramientasDibujo.add(jToggleButtonPunto);
         jToggleButtonPunto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Lapiz.gif"))); // NOI18N
@@ -68,7 +76,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jToggleButtonPuntoActionPerformed(evt);
             }
         });
-        jToolBar1.add(jToggleButtonPunto);
+        jToolBarHerramientasDibujo.add(jToggleButtonPunto);
 
         buttonGroupHerramientasDibujo.add(jToggleButtonLinea);
         jToggleButtonLinea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Linea.gif"))); // NOI18N
@@ -80,7 +88,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jToggleButtonLineaActionPerformed(evt);
             }
         });
-        jToolBar1.add(jToggleButtonLinea);
+        jToolBarHerramientasDibujo.add(jToggleButtonLinea);
 
         buttonGroupHerramientasDibujo.add(jToggleButtonRectangulo);
         jToggleButtonRectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Rectangulo.gif"))); // NOI18N
@@ -92,7 +100,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jToggleButtonRectanguloActionPerformed(evt);
             }
         });
-        jToolBar1.add(jToggleButtonRectangulo);
+        jToolBarHerramientasDibujo.add(jToggleButtonRectangulo);
 
         buttonGroupHerramientasDibujo.add(jToggleButtonOvalo);
         jToggleButtonOvalo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ovalo.gif"))); // NOI18N
@@ -104,9 +112,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jToggleButtonOvaloActionPerformed(evt);
             }
         });
-        jToolBar1.add(jToggleButtonOvalo);
+        jToolBarHerramientasDibujo.add(jToggleButtonOvalo);
 
-        getContentPane().add(jToolBar1, java.awt.BorderLayout.NORTH);
+        getContentPane().add(jToolBarHerramientasDibujo, java.awt.BorderLayout.NORTH);
 
         jLabelBarraEstado.setText("Barra de estado");
         jLabelBarraEstado.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED)));
@@ -114,8 +122,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pabelCentral.setLayout(new java.awt.BorderLayout());
 
-        PanelPropiedades.setLayout(new java.awt.BorderLayout());
+        jToolBarHerramientasAbajo.setRollover(true);
 
+        jPanelHerramientasAbajo.setLayout(new java.awt.GridLayout(0, 3, 2, 3));
+
+        jPanelColor.setLayout(new java.awt.GridLayout());
+
+        panelColores.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Color"));
         panelColores.setLayout(new java.awt.GridLayout(2, 3));
 
         jToggleButtonColorNegro.setBackground(new java.awt.Color(0, 0, 0));
@@ -172,35 +185,48 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelColores.add(jToggleButtonColorVerde);
 
-        PanelPropiedades.add(panelColores, java.awt.BorderLayout.WEST);
+        jPanelColor.add(panelColores);
+
+        jPanelHerramientasAbajo.add(jPanelColor);
+
+        jPanelGrosor.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Grosor"));
+        jPanelGrosor.add(jSpinner1);
+
+        jPanelHerramientasAbajo.add(jPanelGrosor);
+
+        jPanelCheksBox.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), " "));
+        jPanelCheksBox.setLayout(new java.awt.GridLayout(2, 2));
 
         jCheckBoxRelleno.setText("Relleno");
-        jCheckBoxRelleno.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jCheckBoxRellenoStateChanged(evt);
-            }
-        });
-        jCheckBoxRelleno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxRellenoActionPerformed(evt);
-            }
-        });
-        PanelPropiedades.add(jCheckBoxRelleno, java.awt.BorderLayout.LINE_END);
+        jPanelCheksBox.add(jCheckBoxRelleno);
 
-        pabelCentral.add(PanelPropiedades, java.awt.BorderLayout.SOUTH);
+        jCheckBoxTrans.setText("Transparencia");
+        jPanelCheksBox.add(jCheckBoxTrans);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jCheckBoxAlisar.setText("Alisar");
+        jPanelCheksBox.add(jCheckBoxAlisar);
+
+        jCheckBoxEditar.setText("Editar");
+        jPanelCheksBox.add(jCheckBoxEditar);
+
+        jPanelHerramientasAbajo.add(jPanelCheksBox);
+
+        jToolBarHerramientasAbajo.add(jPanelHerramientasAbajo);
+
+        pabelCentral.add(jToolBarHerramientasAbajo, java.awt.BorderLayout.SOUTH);
+
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1288, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 173, Short.MAX_VALUE)
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        pabelCentral.add(jDesktopPane1, java.awt.BorderLayout.CENTER);
+        pabelCentral.add(escritorio, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(pabelCentral, java.awt.BorderLayout.CENTER);
 
@@ -233,7 +259,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenuArchivo.add(jMenuItemGuardar);
 
-        jMenuBar2.add(jMenuArchivo);
+        jMenuBarArchivoEdicion.add(jMenuArchivo);
 
         jMenuEdicion.setText("Edición");
 
@@ -246,9 +272,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenuEdicion.add(jCheckBoxMenuItemEdicion);
 
-        jMenuBar2.add(jMenuEdicion);
+        jMenuBarArchivoEdicion.add(jMenuEdicion);
 
-        setJMenuBar(jMenuBar2);
+        setJMenuBar(jMenuBarArchivoEdicion);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -272,10 +298,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             //Código
         }
     }//GEN-LAST:event_jMenuItemGuardarActionPerformed
-
-    private void jCheckBoxRellenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxRellenoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxRellenoActionPerformed
 
     private void jToggleButtonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonPuntoActionPerformed
         // Al hacer clik en el punto
@@ -301,47 +323,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //this.lienzo.setForma("Elipse");
     }//GEN-LAST:event_jToggleButtonOvaloActionPerformed
 
-    private void jToggleButtonColorNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorNegroActionPerformed
-        // Al hacer clik en el color negro
-        this.jLabelBarraEstado.setText("Color Negro");
-        //this.lienzo.setColor(Color.black);
-    }//GEN-LAST:event_jToggleButtonColorNegroActionPerformed
-
-    private void jToggleButtonColorRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorRojoActionPerformed
-        // Al hacer clik en el color rojo
-        this.jLabelBarraEstado.setText("Color Rojo");
-        //this.lienzo.setColor(Color.red);        
-    }//GEN-LAST:event_jToggleButtonColorRojoActionPerformed
-
-    private void jToggleButtonColorAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAzulActionPerformed
-        // Al hacer clik en el color Azul
-        this.jLabelBarraEstado.setText("Color Azul");
-        //this.lienzo.setColor(Color.blue);
-    }//GEN-LAST:event_jToggleButtonColorAzulActionPerformed
-
-    private void jToggleButtonColorBlancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorBlancoActionPerformed
-        // Al hacer clik en el color Blanco
-        this.jLabelBarraEstado.setText("Color Blanco");
-        //this.lienzo.setColor(Color.white);
-    }//GEN-LAST:event_jToggleButtonColorBlancoActionPerformed
-
-    private void jToggleButtonColorAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAmarilloActionPerformed
-        // Al hacer clik en el color Amarillo
-        this.jLabelBarraEstado.setText("Color Amarillo");
-        //this.lienzo.setColor(Color.yellow);
-    }//GEN-LAST:event_jToggleButtonColorAmarilloActionPerformed
-
-    private void jToggleButtonColorVerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorVerdeActionPerformed
-        // Al hacer clik en el color Verde
-        this.jLabelBarraEstado.setText("Color Verde");
-        //this.lienzo.setColor(Color.green);
-    }//GEN-LAST:event_jToggleButtonColorVerdeActionPerformed
-
-    private void jCheckBoxRellenoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxRellenoStateChanged
-        // Checkbox utilizado para pintar figuras con o sin relleno
-        //this.lienzo.setRelleno(this.jCheckBoxRelleno.isSelected());
-    }//GEN-LAST:event_jCheckBoxRellenoStateChanged
-
     private void jCheckBoxMenuItemEdicionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemEdicionStateChanged
         // Con este checkBox controlamos que la barra de estado sea visible o no
         this.jLabelBarraEstado.setVisible(this.jCheckBoxMenuItemEdicion.isSelected());
@@ -350,24 +331,70 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jMenuItemNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevoActionPerformed
         // Este item elimina todo lo pintado en el lienzo
         //this.lienzo.borrarPuntos();
+        VentanaInterna vi = new VentanaInterna();
+        escritorio.add(vi);
+                      vi.setVisible(true);
         repaint();
     }//GEN-LAST:event_jMenuItemNuevoActionPerformed
+
+    private void jToggleButtonColorVerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorVerdeActionPerformed
+        // Al hacer clik en el color Verde
+        this.jLabelBarraEstado.setText("Color Verde");
+        //this.lienzo.setColor(Color.green);
+    }//GEN-LAST:event_jToggleButtonColorVerdeActionPerformed
+
+    private void jToggleButtonColorAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAmarilloActionPerformed
+        // Al hacer clik en el color Amarillo
+        this.jLabelBarraEstado.setText("Color Amarillo");
+        //this.lienzo.setColor(Color.yellow);
+    }//GEN-LAST:event_jToggleButtonColorAmarilloActionPerformed
+
+    private void jToggleButtonColorBlancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorBlancoActionPerformed
+        // Al hacer clik en el color Blanco
+        this.jLabelBarraEstado.setText("Color Blanco");
+        //this.lienzo.setColor(Color.white);
+    }//GEN-LAST:event_jToggleButtonColorBlancoActionPerformed
+
+    private void jToggleButtonColorAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAzulActionPerformed
+        // Al hacer clik en el color Azul
+        this.jLabelBarraEstado.setText("Color Azul");
+        //this.lienzo.setColor(Color.blue);
+    }//GEN-LAST:event_jToggleButtonColorAzulActionPerformed
+
+    private void jToggleButtonColorRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorRojoActionPerformed
+        // Al hacer clik en el color rojo
+        this.jLabelBarraEstado.setText("Color Rojo");
+        //this.lienzo.setColor(Color.red);
+    }//GEN-LAST:event_jToggleButtonColorRojoActionPerformed
+
+    private void jToggleButtonColorNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorNegroActionPerformed
+        // Al hacer clik en el color negro
+        this.jLabelBarraEstado.setText("Color Negro");
+        //this.lienzo.setColor(Color.black);
+    }//GEN-LAST:event_jToggleButtonColorNegroActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelPropiedades;
     private javax.swing.ButtonGroup buttonGroupHerramientasDibujo;
+    private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JCheckBox jCheckBoxAlisar;
+    private javax.swing.JCheckBox jCheckBoxEditar;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemEdicion;
     private javax.swing.JCheckBox jCheckBoxRelleno;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JCheckBox jCheckBoxTrans;
     private javax.swing.JLabel jLabelBarraEstado;
     private javax.swing.JMenu jMenuArchivo;
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBarArchivoEdicion;
     private javax.swing.JMenu jMenuEdicion;
     private javax.swing.JMenuItem jMenuItemAbrirç;
     private javax.swing.JMenuItem jMenuItemGuardar;
     private javax.swing.JMenuItem jMenuItemNuevo;
+    private javax.swing.JPanel jPanelCheksBox;
+    private javax.swing.JPanel jPanelColor;
+    private javax.swing.JPanel jPanelGrosor;
+    private javax.swing.JPanel jPanelHerramientasAbajo;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JToggleButton jToggleButtonColorAmarillo;
     private javax.swing.JToggleButton jToggleButtonColorAzul;
     private javax.swing.JToggleButton jToggleButtonColorBlanco;
@@ -378,7 +405,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButtonOvalo;
     private javax.swing.JToggleButton jToggleButtonPunto;
     private javax.swing.JToggleButton jToggleButtonRectangulo;
-    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JToolBar jToolBarHerramientasAbajo;
+    private javax.swing.JToolBar jToolBarHerramientasDibujo;
     private javax.swing.JPanel pabelCentral;
     private javax.swing.JPanel panelColores;
     // End of variables declaration//GEN-END:variables
