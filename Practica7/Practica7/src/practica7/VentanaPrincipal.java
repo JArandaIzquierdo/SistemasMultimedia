@@ -126,7 +126,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanelHerramientasAbajo.setLayout(new java.awt.GridLayout(0, 3, 2, 3));
 
-        jPanelColor.setLayout(new java.awt.GridLayout());
+        jPanelColor.setLayout(new java.awt.GridLayout(1, 0));
 
         panelColores.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Color"));
         panelColores.setLayout(new java.awt.GridLayout(2, 3));
