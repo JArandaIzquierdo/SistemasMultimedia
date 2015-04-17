@@ -49,6 +49,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         for(Shape s:vShape) g2d.draw(s);//dibuja lo que hay en el vector
     }
+    private Shape getSelectedShape(Point2D p){
+                   for(Shape s:vShape)
+                     if(s.contains(p)) return s;
+                   return null;
+}
     
     public void pruebaShape(Graphics2D g2d){
        
@@ -94,6 +99,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCheckBox1 = new javax.swing.JCheckBox();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -109,15 +116,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.setText("Editar");
+        jCheckBox1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jCheckBox1StateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(336, Short.MAX_VALUE)
+                .addComponent(jCheckBox1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(271, Short.MAX_VALUE)
+                .addComponent(jCheckBox1)
+                .addContainerGap())
         );
 
         pack();
@@ -150,8 +170,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this. formMouseDragged(evt);
     }//GEN-LAST:event_formMouseReleased
 
+    private void jCheckBox1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBox1StateChanged
+        this.setLocation(jCheckBox1.isSelected());
+    }//GEN-LAST:event_jCheckBox1StateChanged
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox jCheckBox1;
     // End of variables declaration//GEN-END:variables
 }

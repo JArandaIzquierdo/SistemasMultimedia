@@ -5,13 +5,14 @@
  */
 package sm.JAI.iu;
 
+import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Paint;
 import java.awt.Shape;
 import java.awt.Stroke;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.paint.Color;
 import static javafx.scene.paint.Color.color;
 
 /**
@@ -27,23 +28,68 @@ public class Lienzo2D extends javax.swing.JPanel {
         initComponents();
     }
 
-    Paint color;
-    Stroke stroke;
-    boolean relleno;
+    private Color color=Color.BLACK;
+    private static Stroke stroke = new BasicStroke((float)1.0);
+    private final boolean relleno=false;
+    private static boolean editar=false;
+    private Shape s;
+    static String forma;
+    
     List<Shape> vShape = new ArrayList();
-    Shape s;
     
     public void paint(Graphics g){
                       super.paint(g);
                       Graphics2D g2d = (Graphics2D)g;
-                      g2d.setPaint(color);
-                      g2d.setStroke(stroke);
+                      //g2d.setPaint(color);
+                      //g2d.setStroke(stroke);
                       //g2d.setComposite(); y otra mas
                       for(Shape s:vShape) {
                         if(relleno) g2d.fill(s);
                         g2d.draw(s);
                       }
-}
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public static Stroke getStroke() {
+        return stroke;
+    }
+
+    public static void setStroke(Stroke stroke) {
+        Lienzo2D.stroke = stroke;
+    }
+
+    public static boolean isEditar() {
+        return editar;
+    }
+
+    public static void setEditar(boolean editar) {
+        Lienzo2D.editar = editar;
+    }
+
+    public Shape getS() {
+        return s;
+    }
+
+    public void setS(Shape s) {
+        this.s = s;
+    }
+
+    public static String getForma() {
+        return forma;
+    }
+
+    public static void setForma(String forma) {
+        Lienzo2D.forma = forma;
+    }
+    
+    
     
     
     /**
