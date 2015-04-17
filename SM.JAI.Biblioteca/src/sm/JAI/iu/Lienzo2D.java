@@ -31,6 +31,7 @@ public class Lienzo2D extends javax.swing.JPanel {
     Stroke stroke;
     boolean relleno;
     List<Shape> vShape = new ArrayList();
+    Shape s;
     
     public void paint(Graphics g){
                       super.paint(g);
@@ -43,6 +44,7 @@ public class Lienzo2D extends javax.swing.JPanel {
                         g2d.draw(s);
                       }
 }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
