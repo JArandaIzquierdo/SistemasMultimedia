@@ -1,19 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sm.JAI.iu;
 
 import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Composite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.Stroke;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.scene.paint.Color;
-import static javafx.scene.paint.Color.color;
+
 
 /**
  *
@@ -27,9 +24,12 @@ public class Lienzo2D extends javax.swing.JPanel {
     public Lienzo2D() {
         initComponents();
     }
-
-    private Color color=Color.BLACK;
+    
+    // Declaracion de variables generales
+    private static Color color=Color.BLACK;
     private static Stroke stroke = new BasicStroke((float)1.0);
+    private static Composite composicion;
+    private static RenderingHints render;
     private final boolean relleno=false;
     private static boolean editar=false;
     private Shape s;
@@ -37,12 +37,14 @@ public class Lienzo2D extends javax.swing.JPanel {
     
     List<Shape> vShape = new ArrayList();
     
+    // Implementacion del metodo paint
     public void paint(Graphics g){
                       super.paint(g);
                       Graphics2D g2d = (Graphics2D)g;
-                      //g2d.setPaint(color);
-                      //g2d.setStroke(stroke);
-                      //g2d.setComposite(); y otra mas
+                      g2d.setPaint(color);
+                      g2d.setStroke(stroke);
+                      g2d.setComposite(composicion); 
+                      g2d.setRenderingHints(render);
                       for(Shape s:vShape) {
                         if(relleno) g2d.fill(s);
                         g2d.draw(s);
@@ -101,6 +103,20 @@ public class Lienzo2D extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                formMouseReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,6 +128,18 @@ public class Lienzo2D extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        // Codigo para el MousePressed
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
+        // Codigo para el MouseReleased
+    }//GEN-LAST:event_formMouseReleased
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        // Codigo para el MouseDragged
+    }//GEN-LAST:event_formMouseDragged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
