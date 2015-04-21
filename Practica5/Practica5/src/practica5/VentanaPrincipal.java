@@ -16,6 +16,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JCheckBox;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -38,6 +39,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     Point p;//punto
     Rectangle rectangulo;//rectangulo
     List<Shape> vShape = new ArrayList();//Para guardar los rectangulos
+    private static boolean editar=false;
     
     
     public void paint(Graphics g){
@@ -89,7 +91,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         //Trazo libre
         //GeneralPath trazoLibre= new GeneralPath
+        
+        
     }
+    
+public static void setEditar(boolean e) {
+    editar = e;
+}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -161,9 +170,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
         // MouseDrager
+        if(editar){
+            if(rectangulo!=null) rectangulo.setLocation(evt.getPoint());  
+        }
+        
         rectangulo.setFrameFromDiagonal(p, evt.getPoint());
         this.repaint();
     }//GEN-LAST:event_formMouseDragged
+
+    public void setjCheckBox1(JCheckBox jCheckBox1) {
+        this.jCheckBox1 = jCheckBox1;
+    }
 
     private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
         // MouseRealiese
@@ -171,7 +188,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseReleased
 
     private void jCheckBox1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBox1StateChanged
-        this.setLocation(jCheckBox1.isSelected());
+        this.setEditar(jCheckBox1.isSelected());
+        
     }//GEN-LAST:event_jCheckBox1StateChanged
 
 

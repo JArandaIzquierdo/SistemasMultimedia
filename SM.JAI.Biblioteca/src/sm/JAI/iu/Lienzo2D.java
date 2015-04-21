@@ -5,16 +5,22 @@ import java.awt.Color;
 import java.awt.Composite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.Stroke;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+import java.awt.geom.RectangularShape;
 import java.util.ArrayList;
 import java.util.List;
 
 
 /**
  *
- * @author JaviAir
+ * @author Javier Aranda
  */
 public class Lienzo2D extends javax.swing.JPanel {
 
@@ -32,24 +38,52 @@ public class Lienzo2D extends javax.swing.JPanel {
     private static RenderingHints render;
     private final boolean relleno=false;
     private static boolean editar=false;
+    private Point p;
     private Shape s;
     static String forma;
+    
     
     List<Shape> vShape = new ArrayList();
     
     // Implementacion del metodo paint
     public void paint(Graphics g){
-                      super.paint(g);
-                      Graphics2D g2d = (Graphics2D)g;
-                      g2d.setPaint(color);
-                      g2d.setStroke(stroke);
-                      g2d.setComposite(composicion); 
-                      g2d.setRenderingHints(render);
-                      for(Shape s:vShape) {
-                        if(relleno) g2d.fill(s);
-                        g2d.draw(s);
-                      }
+        super.paint(g);
+        Graphics2D g2d = (Graphics2D)g;
+  
+        g2d.setPaint(color); // Damos el color 
+        g2d.setStroke(stroke); // Damos el grosor
+        g2d.setComposite(composicion); 
+        g2d.setRenderingHints(render);
+        
+        for(Shape s:vShape) {
+            if(relleno) g2d.fill(s);
+                g2d.draw(s);
+            }
     }
+    
+private Shape createShape(String forma,Point2D p1, Point2D p2){
+    if((p1==null) || (p2==null)) return null;
+        switch (forma) {
+            case "lapiz":
+                System.out.println("case a tragado lapiz");
+                return s = new Line2D.Double(p1,p1);
+            case "linea":
+                System.out.println("case a tragado linea");
+                return s= new Line2D.Double(p1,p2);
+            case "rectangulo":
+                System.out.println("case a tragado rectangulo");
+                s = new Rectangle2D.Double();
+                ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
+                return s;
+            case "ovalo":
+                System.out.println("case a tragado ovalo");
+                s = new Ellipse2D.Double();
+                ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
+                return s;
+            default:
+                return s=null;
+        }
+}
 
     public Color getColor() {
         return color;
@@ -131,6 +165,8 @@ public class Lienzo2D extends javax.swing.JPanel {
 
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
         // Codigo para el MousePressed
+        p = evt.getPoint(); // Pedimos el punto donde hemos hecho el pressed
+        
     }//GEN-LAST:event_formMousePressed
 
     private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
