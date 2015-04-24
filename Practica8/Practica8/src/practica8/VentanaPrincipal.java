@@ -289,6 +289,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemBarraFormasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jMenuItemBarraFormasStateChanged
         // TODO add your handling code here:
+        // Con este checkBox controlamos que la barra de estado sea visible o no
+        this.jMenuItemBarraFormas.setVisible(this.jCheckBoxMenuItemEdicion.isSelected());
     }//GEN-LAST:event_jMenuItemBarraFormasStateChanged
 
     private void jMenuItemBarraAtributosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jMenuItemBarraAtributosStateChanged
