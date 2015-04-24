@@ -228,11 +228,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevoActionPerformed
-        //Creamos una nueva VentanaInterna
-        VentanaInterna vi = new VentanaInterna(); 
+        //Creamos una nueva VentanaInterna con una imagen
+        VentanaInterna vi = new VentanaInterna();
         escritorio.add(vi);
-                      vi.setVisible(true);
-        repaint();
+        vi.setVisible(true);
+        BufferedImage img;
+        img = new BufferedImage(300,300,BufferedImage.TYPE_INT_RGB);
+        vi.getLienzo().setImage(img);
+
     }//GEN-LAST:event_jMenuItemNuevoActionPerformed
 
     private void jMenuItemAbrirçActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAbrirçActionPerformed
