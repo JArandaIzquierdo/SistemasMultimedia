@@ -3,6 +3,7 @@ package practica7;
 import java.awt.Color;
 import java.io.File;
 import javax.swing.JFileChooser;
+import sm.JAI.iu.Lienzo2D;
 
 /**
  *
@@ -302,25 +303,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jToggleButtonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonPuntoActionPerformed
         // Al hacer clik en el punto
         this.jLabelBarraEstado.setText("Lapiz");
-        //this.lienzo.setForma("Punto");
+        Lienzo2D.setForma("Punto");
     }//GEN-LAST:event_jToggleButtonPuntoActionPerformed
 
     private void jToggleButtonLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonLineaActionPerformed
         // Al hacer clik en la linea
         this.jLabelBarraEstado.setText("Linea");
-        //this.lienzo.setForma("Linea");
+        Lienzo2D.setForma("Linea");
     }//GEN-LAST:event_jToggleButtonLineaActionPerformed
 
     private void jToggleButtonRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonRectanguloActionPerformed
         // Al hacer clik en el rectangulo
         this.jLabelBarraEstado.setText("Rectangulo");
-        //this.lienzo.setForma("Rectangulo");
+        Lienzo2D.setForma("Rectangulo");
     }//GEN-LAST:event_jToggleButtonRectanguloActionPerformed
 
     private void jToggleButtonOvaloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonOvaloActionPerformed
         // Al hacer clik en el ovalo
         this.jLabelBarraEstado.setText("Elipse");
-        //this.lienzo.setForma("Elipse");
+        Lienzo2D.setForma("Elipse");
     }//GEN-LAST:event_jToggleButtonOvaloActionPerformed
 
     private void jCheckBoxMenuItemEdicionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemEdicionStateChanged
@@ -340,14 +341,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jToggleButtonColorVerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorVerdeActionPerformed
         // Al hacer clik en el color Verde
-        this.jLabelBarraEstado.setText("Color Verde");
-        //this.lienzo.setColor(Color.green);
+        //this.jLabelBarraEstado.setText("Color Verde");
+        //Lienzo2D.setColor(Color.green);
     }//GEN-LAST:event_jToggleButtonColorVerdeActionPerformed
 
     private void jToggleButtonColorAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorAmarilloActionPerformed
         // Al hacer clik en el color Amarillo
-        this.jLabelBarraEstado.setText("Color Amarillo");
-        //this.lienzo.setColor(Color.yellow);
+        //this.jLabelBarraEstado.setText("Color Amarillo");
+        //Lienzo2D.setColor(Color.yellow);
     }//GEN-LAST:event_jToggleButtonColorAmarilloActionPerformed
 
     private void jToggleButtonColorBlancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonColorBlancoActionPerformed

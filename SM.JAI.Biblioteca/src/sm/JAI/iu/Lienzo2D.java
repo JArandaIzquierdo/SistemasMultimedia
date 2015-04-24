@@ -6,6 +6,7 @@ import java.awt.Composite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.Stroke;
@@ -32,7 +33,7 @@ public class Lienzo2D extends javax.swing.JPanel {
     }
     
     // Declaracion de variables generales
-    private static Color color=Color.BLACK;
+    private static Color color = Color.BLACK;
     private static Stroke stroke = new BasicStroke((float)1.0);
     private static Composite composicion;
     private static RenderingHints render;
@@ -41,6 +42,9 @@ public class Lienzo2D extends javax.swing.JPanel {
     private Point p;
     private Shape s;
     static String forma;
+    private static Point2D dXY;
+    
+    Rectangle rectangulo;
     
     
     List<Shape> vShape = new ArrayList();
@@ -60,30 +64,62 @@ public class Lienzo2D extends javax.swing.JPanel {
                 g2d.draw(s);
             }
     }
-    
-private Shape createShape(String forma,Point2D p1, Point2D p2){
-    if((p1==null) || (p2==null)) return null;
-        switch (forma) {
-            case "lapiz":
-                System.out.println("case a tragado lapiz");
-                return s = new Line2D.Double(p1,p1);
-            case "linea":
-                System.out.println("case a tragado linea");
-                return s= new Line2D.Double(p1,p2);
-            case "rectangulo":
-                System.out.println("case a tragado rectangulo");
-                s = new Rectangle2D.Double();
-                ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
-                return s;
-            case "ovalo":
-                System.out.println("case a tragado ovalo");
-                s = new Ellipse2D.Double();
-                ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
-                return s;
-            default:
-                return s=null;
+    /*
+        Metodo que crea el tipo de Shape seleccionado
+    */    
+    private Shape createShape(Point2D p1, Point2D p2){
+        if((p1==null) || (p2==null)) return null;
+
+            switch (forma) {
+                case "Punto":
+                    return s = new Line2D.Double(p1,p1);
+
+                case "Linea":   
+                    return s= new Line2D.Double(p1,p2);
+
+                case "Rectangulo":
+                    s = new Rectangle2D.Double();
+                    ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
+                    return s;
+
+                case "Ovalo":
+                    s = new Ellipse2D.Double();
+                    ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
+                    return s;
+
+                default:
+                    return s=null;
+            }
+    }
+
+    // Metodo para coger la linea mas cercana
+    private boolean isNear(Line2D line, Point2D p) {
+        if (line.getP1().equals(line.getP2())) {
+            return line.getP1().distance(p) <= 3.0;
+        } else {
+            return line.ptLineDist(p) <= 3.0;
         }
-}
+    }
+
+    // Metodo para ver si el click del punto contiene un Shape
+    public boolean contains(Shape sh, Point2D p) {
+        if (sh instanceof Line2D) {
+            return isNear((Line2D) sh, p);
+        } else {
+            return sh.contains(p);
+        }
+    }
+
+    // Metodo que devuelve el Shape seleccionado por el punto al hacer click
+    private Shape getSelectedShape(Point2D p) {
+        // Se recorre el vector devuelve la primera figura que contiene ese punto
+        for (Shape s : vShape) {
+            if (contains((Shape) s, p)) {
+                return s;
+            }
+        }
+        return null;
+    }
 
     public Color getColor() {
         return color;
@@ -165,16 +201,29 @@ private Shape createShape(String forma,Point2D p1, Point2D p2){
 
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
         // Codigo para el MousePressed
-        p = evt.getPoint(); // Pedimos el punto donde hemos hecho el pressed
         
+        p = evt.getPoint(); // Pedimos el punto donde hemos hecho el pressed
+        if (editar) {  // Si editar esta activo
+            s = getSelectedShape(evt.getPoint()); // Se seleciona el Shape s a mover
+            if (s != null) {     //Si s no es null
+                double x = (s instanceof Line2D) ? ((Line2D) s).getX1() : s.getBounds2D().getX();
+                double y = (s instanceof Line2D) ? ((Line2D) s).getY1() : s.getBounds2D().getY();
+                dXY.setLocation(x - p.getX(), y - p.getY());
+            }
+        }
+        else {
+            vShape.add(0, createShape(p, p));
+        } 
     }//GEN-LAST:event_formMousePressed
 
     private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
         // Codigo para el MouseReleased
+        formMouseDragged(evt);
     }//GEN-LAST:event_formMouseReleased
 
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
         // Codigo para el MouseDragged
+        
     }//GEN-LAST:event_formMouseDragged
 
 
