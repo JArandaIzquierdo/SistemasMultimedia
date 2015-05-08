@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package practica8;
 
 /**
  *
- * @author JaviAir
+ * @author Javier Aranda
  */
 public class VentanaInterna extends javax.swing.JInternalFrame {
 
@@ -27,20 +22,38 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lienzo2DImagen1 = new sm.JAI.iu.Lienzo2DImagen();
+
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
 
+        javax.swing.GroupLayout lienzo2DImagen1Layout = new javax.swing.GroupLayout(lienzo2DImagen1);
+        lienzo2DImagen1.setLayout(lienzo2DImagen1Layout);
+        lienzo2DImagen1Layout.setHorizontalGroup(
+            lienzo2DImagen1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 394, Short.MAX_VALUE)
+        );
+        lienzo2DImagen1Layout.setVerticalGroup(
+            lienzo2DImagen1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 274, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(lienzo2DImagen1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
         );
 
         pack();
@@ -48,5 +61,7 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private sm.JAI.iu.Lienzo2DImagen lienzo2DImagen1;
     // End of variables declaration//GEN-END:variables
 }

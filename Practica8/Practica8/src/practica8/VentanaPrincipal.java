@@ -234,6 +234,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         vi.setVisible(true);
         BufferedImage img;
         img = new BufferedImage(300,300,BufferedImage.TYPE_INT_RGB);
+        //codigo para que sea blanca, pintar un rectangulo blanco en la imagen (HACER)
         vi.getLienzo().setImage(img);
 
     }//GEN-LAST:event_jMenuItemNuevoActionPerformed

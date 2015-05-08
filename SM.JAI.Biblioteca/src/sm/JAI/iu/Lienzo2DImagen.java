@@ -1,16 +1,46 @@
 package sm.JAI.iu;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author Javier Aranda
  */
 public class Lienzo2DImagen extends Lienzo2D {
+    private BufferedImage img;
 
     /**
      * Creates new form Lienzo2DImagen
      */
     public Lienzo2DImagen() {
         initComponents();
+    }
+    /**
+     * Metodo Paint que pinta las imagenes
+     * @param g: Es el objeto imagen
+     */
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        if(img!=null) g.drawImage(img,0,0,this);
+    }
+    /**
+     * Metodo que da una imagenes
+     * @param img 
+     */
+    public void setImage(BufferedImage img){
+        this.img = img;
+        if(img!=null) {
+            setPreferredSize(new Dimension(img.getWidth(),img.getHeight()));
+        }
+    }
+    /**
+     * Metodo que devuelve la imagen
+     * @return 
+     */             
+    public BufferedImage getImage(){
+        return img; 
     }
 
     /**
