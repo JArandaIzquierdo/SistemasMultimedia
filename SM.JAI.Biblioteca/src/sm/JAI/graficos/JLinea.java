@@ -7,7 +7,7 @@ import java.awt.geom.Point2D;
  *
  * @author Javier Aranda
  */
-public class JLine extends AbstractLineaPunto {
+public class JLinea extends AbstractLineaPunto {
     
     
 }
