@@ -7,9 +7,7 @@ import java.awt.geom.Point2D;
  *
  * @author Javier Aranda
  */
-public class JLine extends AbstracLineaPunto {
+public class JLine extends AbstractLineaPunto {
     
-    public boolean contains(Point2D p) {
-           return isNear(p);
-       }
+    
 }
