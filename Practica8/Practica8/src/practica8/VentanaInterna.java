@@ -1,5 +1,7 @@
 package practica8;
 
+import sm.JAI.iu.Lienzo2DImagen;
+
 /**
  *
  * @author Javier Aranda
@@ -11,6 +13,9 @@ public class VentanaInterna extends javax.swing.JInternalFrame {
      */
     public VentanaInterna() {
         initComponents();
+    }
+    public Lienzo2DImagen getLienzo(){
+        return lienzo2DImagen1;
     }
 
     /**

@@ -93,6 +93,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonLinea.setFocusable(false);
         jToggleButtonLinea.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonLinea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButtonLinea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonLineaActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jToggleButtonLinea);
 
         buttonGroupShapesYEditar.add(jToggleButtonRectangulo);
@@ -230,6 +235,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jMenuItemNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevoActionPerformed
         //Creamos una nueva VentanaInterna con una imagen
         VentanaInterna vi = new VentanaInterna();
+        //Añadimos la ventana interna al esccritorio
         escritorio.add(vi);
         vi.setVisible(true);
         BufferedImage img;
@@ -297,6 +303,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jMenuItemBarraAtributosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jMenuItemBarraAtributosStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemBarraAtributosStateChanged
+
+    private void jToggleButtonLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonLineaActionPerformed
+        // Boton de Linea
+        
+        
+    }//GEN-LAST:event_jToggleButtonLineaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

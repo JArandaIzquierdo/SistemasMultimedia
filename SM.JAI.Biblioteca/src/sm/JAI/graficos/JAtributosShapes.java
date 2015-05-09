@@ -3,7 +3,6 @@ package sm.JAI.graficos;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
-import java.awt.Shape;
 import java.awt.geom.Point2D;
 
 /**
@@ -113,5 +112,5 @@ public interface JAtributosShapes {
      * @return : gradiante true o false
      */
     boolean getisGradiente();  
-    
+        
 }

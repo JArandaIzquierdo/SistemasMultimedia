@@ -1,16 +1,43 @@
 package sm.JAI.iu;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GradientPaint;
 import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Shape;
+import java.awt.Stroke;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
+import sm.JAI.graficos.JAtributosShapes;
 
 /**
  *
  * @author Javier Aranda
  */
 public class Lienzo2DImagen extends Lienzo2D {
-    private BufferedImage img;
-
+    
+    // Variables de la clase
+     private Color colorTrazo;
+     private Color colorRelleno;
+     private GradientPaint gradiente;
+     private Stroke stroke;
+     private float grosor;
+    
+     private boolean relleno = false;
+     private boolean editar = false;
+     private boolean continua =true;
+     private boolean isGradiente=false;
+     
+     private JAtributosShapes s;
+     
+     private  List<JAtributosShapes> vShape= new ArrayList();
+     private Point2D puntoInicial,puntofinal;
+     private BufferedImage img;
+     
     /**
      * Creates new form Lienzo2DImagen
      */
@@ -26,7 +53,7 @@ public class Lienzo2DImagen extends Lienzo2D {
         if(img!=null) g.drawImage(img,0,0,this);
     }
     /**
-     * Metodo que da una imagenes
+     * Metodo que da una imagen
      * @param img 
      */
     public void setImage(BufferedImage img){

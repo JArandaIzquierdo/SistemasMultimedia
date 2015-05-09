@@ -1,8 +1,10 @@
 package sm.JAI.graficos;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
@@ -11,7 +13,7 @@ import java.awt.geom.Point2D;
  *
  * @author Javier Aranda Izquierdo
  */
-public class AbstractLineaPunto extends Line2D.Double implements JAtributosShapes,JPropiedadesShapes{
+public class AbstractLineaPunto extends Line2D.Double implements JAtributosShapes,JMetodosComunes{
 
     //Declaracion de variables
     
@@ -23,6 +25,34 @@ public class AbstractLineaPunto extends Line2D.Double implements JAtributosShape
     private boolean isRelleno;
     private boolean isGradiente;
     private boolean isContinuo;
+    
+    /**
+     * Constructor por defecto de la clase 
+     */
+    public AbstractLineaPunto() {
+        super();
+        this.colorRelleno=Color.BLACK;
+        colorRelleno=null;
+        this.grosor=1.0F;
+        isRelleno=false;
+        isContinuo=true;
+        isGradiente=false;
+    }
+    
+    /**
+     * constructor por parametros de la clase
+     * @param p1    Punto uno de la clase
+     * @param p2    Punto dos de la clase
+     */
+    protected AbstractLineaPunto(Point2D p1,Point2D p2){
+        super(p1,p2);
+        this.colorRelleno=Color.BLACK;
+        colorRelleno=null;
+        this.grosor=1.0F;
+        isRelleno=false;
+        isContinuo=true;
+        isGradiente=false;
+    }
     
     @Override
     public void setCorlorTrazo(Color color) {
@@ -94,24 +124,44 @@ public class AbstractLineaPunto extends Line2D.Double implements JAtributosShape
         return isGradiente;
     }
 
+    private boolean isNear(Point2D p) {
+        return this.ptLineDist(p) <= 2.0;
+    }
+    
     @Override
     public boolean isContained(Point2D p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return isNear(p);
     }
 
     @Override
     public void setLocation(Point2D posicion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void update(Point2D p1, Point2D p2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void paint(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Graphics2D g2d = (Graphics2D) g;
+        if(isContinuo){
+            stroke = new BasicStroke(grosor);
+            g2d.setStroke(stroke);
+        }else{
+            stroke = new BasicStroke(grosor, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10.0f, discontinua, 0.0f);
+            g2d.setStroke(stroke);
+        }
+        
+        g2d.setPaint(colorRelleno);
+        g2d.draw(this);
+        if(isRelleno){
+            g2d.setPaint(colorTrazo);
+            g2d.fill(this);
+        }else if(isGradiente){
+            g2d.setPaint(gradiente);
+            g2d.fill(this);        
+        }
     }
-    
-}
+}    

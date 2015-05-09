@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package sm.JAI.graficos;
 
 import java.awt.Graphics;
@@ -5,9 +10,9 @@ import java.awt.geom.Point2D;
 
 /**
  *
- * @author Javier Aranda Izquierdo
+ * @author JaviAir
  */
-public interface JPropiedadesShapes {
+public interface JMetodosComunes {
     
     /**
      * Devuelve si la figura se encuentra en la el Point2D que pasame 
@@ -38,4 +43,5 @@ public interface JPropiedadesShapes {
      * @param g 
      */
     void paint(Graphics g);
+    
 }
