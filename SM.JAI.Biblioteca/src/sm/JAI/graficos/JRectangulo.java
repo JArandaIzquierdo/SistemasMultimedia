@@ -10,7 +10,7 @@ import java.awt.geom.Rectangle2D;
  *
  * @author Javier Aranda
  */
-public class JRectangulo extends Rectangle2D.Double implements JAtributosShapes{
+public class JRectangulo extends Rectangle2D.Double implements JAtributosShapes,JPropiedadesShapes{
 
     @Override
     public void setCorlorTrazo(Color color) {

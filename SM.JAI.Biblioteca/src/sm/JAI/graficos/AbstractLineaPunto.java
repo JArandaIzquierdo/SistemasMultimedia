@@ -3,6 +3,7 @@ package sm.JAI.graficos;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
+import java.awt.Stroke;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
@@ -12,74 +13,85 @@ import java.awt.geom.Point2D;
  */
 public class AbstractLineaPunto extends Line2D.Double implements JAtributosShapes,JPropiedadesShapes{
 
+    //Declaracion de variables
+    
+    private Color colorTrazo;
+    private Color colorRelleno;
+    private GradientPaint gradiente;
+    private Stroke stroke;
+    private float grosor;
+    private boolean isRelleno;
+    private boolean isGradiente;
+    private boolean isContinuo;
+    
     @Override
     public void setCorlorTrazo(Color color) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        colorTrazo=color;
     }
 
     @Override
     public Color getColorTrazo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return colorTrazo;
     }
 
     @Override
     public void setColorRelleno(Color color) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        colorRelleno=color;
     }
 
     @Override
     public Color getColorRelleno() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return colorRelleno;
     }
 
     @Override
     public void setGradiente(GradientPaint gradiente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        (this).gradiente=gradiente;
     }
 
     @Override
     public GradientPaint getGradientPaint() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return gradiente;
     }
 
     @Override
     public void setGrosor(float stroke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        grosor=stroke;
     }
 
     @Override
     public float getGrosor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return grosor;
     }
 
     @Override
     public void setIsRelleno(boolean relleno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        isRelleno=relleno;
     }
 
     @Override
     public boolean isRelleno() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return isRelleno;
     }
 
     @Override
     public void setIsContinuo(boolean continuidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        isContinuo=continuidad;
     }
 
     @Override
     public boolean isContinuo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return isContinuo;
     }
 
     @Override
     public void setIsGradiente(boolean gradiente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        isGradiente=gradiente;
     }
 
     @Override
     public boolean getisGradiente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return isGradiente;
     }
 
     @Override
