@@ -10,7 +10,7 @@ import java.awt.geom.Point2D;
  *
  * @author Javier Aranda
  */
-public class JElipse extends Ellipse2D.Double implements PropiedadesShapes{
+public class JElipse extends Ellipse2D.Double implements JAtributosShapes{
 
     @Override
     public void setCorlorTrazo(Color color) {
