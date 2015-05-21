@@ -47,6 +47,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonRellenar = new javax.swing.JToggleButton();
         jToggleButtonTransparencia = new javax.swing.JToggleButton();
         jToggleButtonAlisar = new javax.swing.JToggleButton();
+        jPanelImagenYBarraEstado = new javax.swing.JPanel();
+        jPanelImagen = new javax.swing.JPanel();
         jLabelBarraEstado = new javax.swing.JLabel();
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar2 = new javax.swing.JMenuBar();
@@ -150,19 +152,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
+        jPanelImagenYBarraEstado.setLayout(new java.awt.BorderLayout());
+
+        javax.swing.GroupLayout jPanelImagenLayout = new javax.swing.GroupLayout(jPanelImagen);
+        jPanelImagen.setLayout(jPanelImagenLayout);
+        jPanelImagenLayout.setHorizontalGroup(
+            jPanelImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 577, Short.MAX_VALUE)
+        );
+        jPanelImagenLayout.setVerticalGroup(
+            jPanelImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanelImagenYBarraEstado.add(jPanelImagen, java.awt.BorderLayout.CENTER);
+
         jLabelBarraEstado.setText("Barra de estado");
         jLabelBarraEstado.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED)));
-        getContentPane().add(jLabelBarraEstado, java.awt.BorderLayout.SOUTH);
+        jPanelImagenYBarraEstado.add(jLabelBarraEstado, java.awt.BorderLayout.SOUTH);
+
+        getContentPane().add(jPanelImagenYBarraEstado, java.awt.BorderLayout.SOUTH);
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 218, Short.MAX_VALUE)
+            .addGap(0, 118, Short.MAX_VALUE)
         );
 
         getContentPane().add(escritorio, java.awt.BorderLayout.CENTER);
@@ -328,6 +347,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemGuardar;
     private javax.swing.JMenuItem jMenuItemNuevo;
     private javax.swing.JMenu jMenuVer;
+    private javax.swing.JPanel jPanelImagen;
+    private javax.swing.JPanel jPanelImagenYBarraEstado;
     private javax.swing.JSpinner jSpinnerGrosor;
     private javax.swing.JToggleButton jToggleButtonAlisar;
     private javax.swing.JToggleButton jToggleButtonEditar;
