@@ -49,8 +49,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonAlisar = new javax.swing.JToggleButton();
         jPanelImagenYBarraEstado = new javax.swing.JPanel();
         jToolBarImagen = new javax.swing.JToolBar();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelHerramientasImagen = new javax.swing.JPanel();
+        jPanelBrillo = new javax.swing.JPanel();
+        jSliderBrillo = new javax.swing.JSlider();
+        jPanelContraste = new javax.swing.JPanel();
+        jButtonContraste = new javax.swing.JButton();
+        jButtonOscurecer = new javax.swing.JButton();
+        jButtonIluminar = new javax.swing.JButton();
+        jPanelFiltro = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox();
         jLabelBarraEstado = new javax.swing.JLabel();
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar2 = new javax.swing.JMenuBar();
@@ -158,27 +165,42 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jToolBarImagen.setRollover(true);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Brillo"));
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanelHerramientasImagen.setLayout(new java.awt.GridLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(432, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jPanelBrillo.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Brillo"));
+        jPanelBrillo.setLayout(new java.awt.GridLayout(1, 0));
+        jPanelBrillo.add(jSliderBrillo);
 
-        jToolBarImagen.add(jPanel2);
+        jPanelHerramientasImagen.add(jPanelBrillo);
+
+        jPanelContraste.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Contraste"));
+        jPanelContraste.setLayout(new java.awt.GridBagLayout());
+
+        jButtonContraste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/contraste.png"))); // NOI18N
+        jButtonContraste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonContrasteActionPerformed(evt);
+            }
+        });
+        jPanelContraste.add(jButtonContraste, new java.awt.GridBagConstraints());
+
+        jButtonOscurecer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/oscurecer.png"))); // NOI18N
+        jPanelContraste.add(jButtonOscurecer, new java.awt.GridBagConstraints());
+
+        jButtonIluminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/iluminar.png"))); // NOI18N
+        jPanelContraste.add(jButtonIluminar, new java.awt.GridBagConstraints());
+
+        jPanelHerramientasImagen.add(jPanelContraste);
+
+        jPanelFiltro.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Filtro"));
+        jPanelFiltro.setLayout(new java.awt.GridLayout());
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanelFiltro.add(jComboBox1);
+
+        jPanelHerramientasImagen.add(jPanelFiltro);
+
+        jToolBarImagen.add(jPanelHerramientasImagen);
 
         jPanelImagenYBarraEstado.add(jToolBarImagen, java.awt.BorderLayout.CENTER);
 
@@ -192,11 +214,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 591, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 114, Short.MAX_VALUE)
+            .addGap(0, 180, Short.MAX_VALUE)
         );
 
         getContentPane().add(escritorio, java.awt.BorderLayout.CENTER);
@@ -344,14 +366,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jToggleButtonLineaActionPerformed
 
+    private void jButtonContrasteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContrasteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonContrasteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupShapesYEditar;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JButton jButtonAbrir;
+    private javax.swing.JButton jButtonContraste;
     private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButtonIluminar;
     private javax.swing.JButton jButtonNuevo;
+    private javax.swing.JButton jButtonOscurecer;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemEdicion;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBoxColores;
     private javax.swing.JLabel jLabelBarraEstado;
     private javax.swing.JMenu jMenuArchivo;
@@ -362,9 +392,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemGuardar;
     private javax.swing.JMenuItem jMenuItemNuevo;
     private javax.swing.JMenu jMenuVer;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelBrillo;
+    private javax.swing.JPanel jPanelContraste;
+    private javax.swing.JPanel jPanelFiltro;
+    private javax.swing.JPanel jPanelHerramientasImagen;
     private javax.swing.JPanel jPanelImagenYBarraEstado;
+    private javax.swing.JSlider jSliderBrillo;
     private javax.swing.JSpinner jSpinnerGrosor;
     private javax.swing.JToggleButton jToggleButtonAlisar;
     private javax.swing.JToggleButton jToggleButtonEditar;
