@@ -42,13 +42,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonRectangulo = new javax.swing.JToggleButton();
         jToggleButtonElipse = new javax.swing.JToggleButton();
         jToggleButtonEditar = new javax.swing.JToggleButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        jComboBoxColores = new javax.swing.JComboBox();
         jSpinnerGrosor = new javax.swing.JSpinner();
         jToggleButtonRellenar = new javax.swing.JToggleButton();
         jToggleButtonTransparencia = new javax.swing.JToggleButton();
         jToggleButtonAlisar = new javax.swing.JToggleButton();
         jPanelImagenYBarraEstado = new javax.swing.JPanel();
-        jPanelImagen = new javax.swing.JPanel();
+        jToolBarImagen = new javax.swing.JToolBar();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabelBarraEstado = new javax.swing.JLabel();
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar2 = new javax.swing.JMenuBar();
@@ -65,33 +67,33 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
-        jButtonNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/nuevo.png"))); // NOI18N
+        jButtonNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/nuevo.png"))); // NOI18N
         jButtonNuevo.setFocusable(false);
         jButtonNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButtonNuevo);
 
-        jButtonAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/abrir.png"))); // NOI18N
+        jButtonAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/abrir.png"))); // NOI18N
         jButtonAbrir.setFocusable(false);
         jButtonAbrir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonAbrir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButtonAbrir);
 
-        jButtonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/guardar.png"))); // NOI18N
+        jButtonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/guardar.png"))); // NOI18N
         jButtonGuardar.setFocusable(false);
         jButtonGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButtonGuardar);
 
         buttonGroupShapesYEditar.add(jToggleButtonPunto);
-        jToggleButtonPunto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/punto.png"))); // NOI18N
+        jToggleButtonPunto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/punto.png"))); // NOI18N
         jToggleButtonPunto.setFocusable(false);
         jToggleButtonPunto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonPunto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jToggleButtonPunto);
 
         buttonGroupShapesYEditar.add(jToggleButtonLinea);
-        jToggleButtonLinea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/linea.png"))); // NOI18N
+        jToggleButtonLinea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/linea.png"))); // NOI18N
         jToggleButtonLinea.setFocusable(false);
         jToggleButtonLinea.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonLinea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -103,48 +105,48 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToolBar1.add(jToggleButtonLinea);
 
         buttonGroupShapesYEditar.add(jToggleButtonRectangulo);
-        jToggleButtonRectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rectangulo.png"))); // NOI18N
+        jToggleButtonRectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/rectangulo.png"))); // NOI18N
         jToggleButtonRectangulo.setFocusable(false);
         jToggleButtonRectangulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonRectangulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jToggleButtonRectangulo);
 
         buttonGroupShapesYEditar.add(jToggleButtonElipse);
-        jToggleButtonElipse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/elipse.png"))); // NOI18N
+        jToggleButtonElipse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/elipse.png"))); // NOI18N
         jToggleButtonElipse.setFocusable(false);
         jToggleButtonElipse.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonElipse.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jToggleButtonElipse);
 
         buttonGroupShapesYEditar.add(jToggleButtonEditar);
-        jToggleButtonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seleccion.png"))); // NOI18N
+        jToggleButtonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/seleccion.png"))); // NOI18N
         jToggleButtonEditar.setFocusable(false);
         jToggleButtonEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jToggleButtonEditar);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxColores.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxColores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBoxColoresActionPerformed(evt);
             }
         });
-        jToolBar1.add(jComboBox1);
+        jToolBar1.add(jComboBoxColores);
         jToolBar1.add(jSpinnerGrosor);
 
-        jToggleButtonRellenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rellenar.png"))); // NOI18N
+        jToggleButtonRellenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/rellenar.png"))); // NOI18N
         jToggleButtonRellenar.setFocusable(false);
         jToggleButtonRellenar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonRellenar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jToggleButtonRellenar);
 
-        jToggleButtonTransparencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/transparencia.png"))); // NOI18N
+        jToggleButtonTransparencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/transparencia.png"))); // NOI18N
         jToggleButtonTransparencia.setFocusable(false);
         jToggleButtonTransparencia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonTransparencia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jToggleButtonTransparencia);
 
-        jToggleButtonAlisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/alisar.png"))); // NOI18N
+        jToggleButtonAlisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/alisar.png"))); // NOI18N
         jToggleButtonAlisar.setFocusable(false);
         jToggleButtonAlisar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonAlisar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -154,18 +156,31 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanelImagenYBarraEstado.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanelImagenLayout = new javax.swing.GroupLayout(jPanelImagen);
-        jPanelImagen.setLayout(jPanelImagenLayout);
-        jPanelImagenLayout.setHorizontalGroup(
-            jPanelImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+        jToolBarImagen.setRollover(true);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Brillo"));
+        jPanel1.setLayout(new java.awt.GridLayout());
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(432, Short.MAX_VALUE))
         );
-        jPanelImagenLayout.setVerticalGroup(
-            jPanelImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanelImagenYBarraEstado.add(jPanelImagen, java.awt.BorderLayout.CENTER);
+        jToolBarImagen.add(jPanel2);
+
+        jPanelImagenYBarraEstado.add(jToolBarImagen, java.awt.BorderLayout.CENTER);
 
         jLabelBarraEstado.setText("Barra de estado");
         jLabelBarraEstado.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED)));
@@ -181,7 +196,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 118, Short.MAX_VALUE)
+            .addGap(0, 114, Short.MAX_VALUE)
         );
 
         getContentPane().add(escritorio, java.awt.BorderLayout.CENTER);
@@ -309,9 +324,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jLabelBarraEstado.setVisible(this.jCheckBoxMenuItemEdicion.isSelected());
     }//GEN-LAST:event_jCheckBoxMenuItemEdicionStateChanged
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBoxColoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxColoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jComboBoxColoresActionPerformed
 
     private void jMenuItemBarraFormasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jMenuItemBarraFormasStateChanged
         // TODO add your handling code here:
@@ -337,7 +352,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JButton jButtonNuevo;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemEdicion;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBoxColores;
     private javax.swing.JLabel jLabelBarraEstado;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar2;
@@ -347,7 +362,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemGuardar;
     private javax.swing.JMenuItem jMenuItemNuevo;
     private javax.swing.JMenu jMenuVer;
-    private javax.swing.JPanel jPanelImagen;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelImagenYBarraEstado;
     private javax.swing.JSpinner jSpinnerGrosor;
     private javax.swing.JToggleButton jToggleButtonAlisar;
@@ -359,5 +375,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButtonRellenar;
     private javax.swing.JToggleButton jToggleButtonTransparencia;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JToolBar jToolBarImagen;
     // End of variables declaration//GEN-END:variables
 }
