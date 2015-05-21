@@ -17,6 +17,9 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.RectangularShape;
 import java.util.ArrayList;
 import java.util.List;
+import sm.JAI.graficos.JAtributosShapes;
+import sm.JAI.graficos.JLinea;
+import sm.JAI.graficos.JPunto;
 
 
 /**
@@ -40,7 +43,7 @@ public class Lienzo2D extends javax.swing.JPanel {
     private final boolean relleno=false;
     private static boolean editar=false;
     private Point p;
-    private Shape s;
+    private JAtributosShapes s;
     static String forma;
     private static Point2D dXY;
     
@@ -67,25 +70,26 @@ public class Lienzo2D extends javax.swing.JPanel {
     /*
         Metodo que crea el tipo de Shape seleccionado
     */    
-    private Shape createShape(Point2D p1, Point2D p2){
+    private JAtributosShapes createShape(Point2D p1, Point2D p2){
         if((p1==null) || (p2==null)) return null;
 
             switch (forma) {
                 case "Punto":
-                    return s = new Line2D.Double(p1,p1);
+                    return s = new JPunto(p1,p1);
+                    
 
                 case "Linea":   
-                    return s= new Line2D.Double(p1,p2);
+                    return s= new JLinea(p1,p2);
 
-                case "Rectangulo":
-                    s = new Rectangle2D.Double();
-                    ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
-                    return s;
-
-                case "Ovalo":
-                    s = new Ellipse2D.Double();
-                    ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
-                    return s;
+//                case "Rectangulo":
+//                    s = new Rectangle2D.Double();
+//                    ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
+//                    return s;
+//
+//                case "Ovalo":
+//                    s = new Ellipse2D.Double();
+//                    ((RectangularShape)s).setFrameFromDiagonal(p1, p2);
+//                    return s;
 
                 default:
                     return s=null;
@@ -145,14 +149,6 @@ public class Lienzo2D extends javax.swing.JPanel {
         Lienzo2D.editar = editar;
     }
 
-    public Shape getS() {
-        return s;
-    }
-
-    public void setS(Shape s) {
-        this.s = s;
-    }
-
     public static String getForma() {
         return forma;
     }
@@ -203,16 +199,16 @@ public class Lienzo2D extends javax.swing.JPanel {
         // Codigo para el MousePressed
         
         p = evt.getPoint(); // Pedimos el punto donde hemos hecho el pressed
-        if (editar) {  // Si editar esta activo
-            s = getSelectedShape(evt.getPoint()); // Se seleciona el Shape s a mover
-            if (s != null) {     //Si s no es null
-                double x = (s instanceof Line2D) ? ((Line2D) s).getX1() : s.getBounds2D().getX();
-                double y = (s instanceof Line2D) ? ((Line2D) s).getY1() : s.getBounds2D().getY();
-                dXY.setLocation(x - p.getX(), y - p.getY());
-            }
+       if (editar) {  // Si editar esta activo
+//            //s = getSelectedShape(evt.getPoint()); // Se seleciona el Shape s a mover
+//            if (s != null) {     //Si s no es null
+//                double x = (s instanceof Line2D) ? ((Line2D) s).getX1() : s.getBounds2D().getX();
+//                double y = (s instanceof Line2D) ? ((Line2D) s).getY1() : s.getBounds2D().getY();
+//                dXY.setLocation(x - p.getX(), y - p.getY());
+//            }
         }
         else {
-            vShape.add(0, createShape(p, p));
+            vShape.add(0, (Shape) createShape(p, p));
         } 
     }//GEN-LAST:event_formMousePressed
 
@@ -223,7 +219,9 @@ public class Lienzo2D extends javax.swing.JPanel {
 
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
         // Codigo para el MouseDragged
-        
+        //s.update(puntoInicial,puntoFinal);
+        repaint();
+
     }//GEN-LAST:event_formMouseDragged
 
 

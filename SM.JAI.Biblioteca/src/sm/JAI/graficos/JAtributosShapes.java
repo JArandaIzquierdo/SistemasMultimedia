@@ -2,8 +2,6 @@ package sm.JAI.graficos;
 
 import java.awt.Color;
 import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.geom.Point2D;
 
 /**
  *
