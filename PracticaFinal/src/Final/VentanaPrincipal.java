@@ -5,6 +5,8 @@
  */
 package Final;
 
+import MultimediaProgram.VentanaGrabarSonido;
+import MultimediaProgram.VentanaInternaReproductor;
 import java.awt.BasicStroke;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
@@ -17,6 +19,8 @@ import java.awt.image.LookupOp;
 import java.awt.image.LookupTable;
 import java.awt.image.RescaleOp;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import sm.JAI.iu.Lienzo2DImagen;
@@ -88,6 +92,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItemNuevo = new javax.swing.JMenuItem();
         jMenuItemAbrirç = new javax.swing.JMenuItem();
         jMenuItemGuardar = new javax.swing.JMenuItem();
+        jMenuItemAbrirAudio = new javax.swing.JMenuItem();
+        jMenuItemGuardarAudio = new javax.swing.JMenuItem();
         jMenuVer = new javax.swing.JMenu();
         jCheckBoxMenuItemEdicion = new javax.swing.JCheckBoxMenuItem();
         jMenuItemBarraFormas = new javax.swing.JMenuItem();
@@ -460,6 +466,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenuArchivo.add(jMenuItemGuardar);
 
+        jMenuItemAbrirAudio.setText("Abrir Audio");
+        jMenuItemAbrirAudio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAbrirAudioActionPerformed(evt);
+            }
+        });
+        jMenuArchivo.add(jMenuItemAbrirAudio);
+
+        jMenuItemGuardarAudio.setText("Guardar Audio");
+        jMenuItemGuardarAudio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemGuardarAudioActionPerformed(evt);
+            }
+        });
+        jMenuArchivo.add(jMenuItemGuardarAudio);
+
         jMenuBar2.add(jMenuArchivo);
 
         jMenuVer.setText("Ver");
@@ -789,6 +811,42 @@ BufferedImage imagenNueva;//Variable que toma el valor del brillo
                 }
     }//GEN-LAST:event_jButtonDIsminuirActionPerformed
 
+    private void jMenuItemAbrirAudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAbrirAudioActionPerformed
+        // Boton para abrir sonido:
+        JFileChooser dlg = new JFileChooser();
+        int resp = dlg.showOpenDialog(this);
+        if( resp == JFileChooser.APPROVE_OPTION) {
+        File f = dlg.getSelectedFile();
+         
+            try {
+                 VentanaInternaReproductor vr=new VentanaInternaReproductor(f);
+                 this.escritorio.add(vr); 
+                 vr.setVisible(true); 
+            } catch (Exception ex) {
+                Logger.getLogger(MultimediaProgram.VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       
+        }
+    }//GEN-LAST:event_jMenuItemAbrirAudioActionPerformed
+
+    private void jMenuItemGuardarAudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGuardarAudioActionPerformed
+        // Guardar un sonido
+        JFileChooser dlg = new JFileChooser();
+        //dlg.addChoosableFileFilter()
+        int resp = dlg.showSaveDialog(this);
+        if(resp == JFileChooser.APPROVE_OPTION) {
+        File f = dlg.getSelectedFile();       
+            try{ 
+               VentanaGrabarSonido gs = new VentanaGrabarSonido(f);
+                this.escritorio.add(gs);
+                gs.setVisible(true);
+                    }catch(Exception ex){ 
+       System.err.println("Error al grabar el sonido"); 
+   
+                    } 
+        } 
+    }//GEN-LAST:event_jMenuItemGuardarAudioActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupShapesYEditar;
@@ -811,10 +869,12 @@ BufferedImage imagenNueva;//Variable que toma el valor del brillo
     private javax.swing.JLabel jLabelBarraEstado;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItemAbrirAudio;
     private javax.swing.JMenuItem jMenuItemAbrirç;
     private javax.swing.JMenuItem jMenuItemBarraAtributos;
     private javax.swing.JMenuItem jMenuItemBarraFormas;
     private javax.swing.JMenuItem jMenuItemGuardar;
+    private javax.swing.JMenuItem jMenuItemGuardarAudio;
     private javax.swing.JMenuItem jMenuItemNuevo;
     private javax.swing.JMenu jMenuVer;
     private javax.swing.JPanel jPanelBrillo;
