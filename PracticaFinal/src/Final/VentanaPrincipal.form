@@ -119,7 +119,7 @@
         <Component class="javax.swing.JButton" name="jButtonNuevo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sm/JAI/images/NuevoBoceto.GIF"/>
+              <Image iconType="3" name="/sm/JAI/images/nuevo.png"/>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -281,7 +281,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="142" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="134" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -335,15 +335,14 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jPanelBrillo" max="32767" attributes="0"/>
                               <Component id="jPanelFiltro" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jPanelContraste" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jPanelRotacion" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jPanelEscala" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jPanelSinu" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="jPanelContraste" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jPanelRotacion" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jPanelEscala" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanelSinu" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -381,6 +380,9 @@
                   </Layout>
                   <SubComponents>
                     <Component class="javax.swing.JSlider" name="jSliderBrillo">
+                      <Events>
+                        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderBrilloStateChanged"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -642,7 +644,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="54" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>

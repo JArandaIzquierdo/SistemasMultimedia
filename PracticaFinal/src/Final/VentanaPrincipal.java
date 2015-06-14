@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practica8;
+package Final;
 
 import java.awt.image.BufferedImage;
+import java.awt.image.RescaleOp;
 import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
@@ -84,7 +85,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
-        jButtonNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/NuevoBoceto.GIF"))); // NOI18N
+        jButtonNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/nuevo.png"))); // NOI18N
         jButtonNuevo.setFocusable(false);
         jButtonNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -184,7 +185,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 142, Short.MAX_VALUE)
+            .addGap(0, 134, Short.MAX_VALUE)
         );
 
         getContentPane().add(escritorio, java.awt.BorderLayout.CENTER);
@@ -194,6 +195,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToolBarImagen.setRollover(true);
 
         jPanelBrillo.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Brillo"));
+
+        jSliderBrillo.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSliderBrilloStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelBrilloLayout = new javax.swing.GroupLayout(jPanelBrillo);
         jPanelBrillo.setLayout(jPanelBrilloLayout);
@@ -335,7 +342,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         jPanelSinuLayout.setVerticalGroup(
             jPanelSinuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 54, Short.MAX_VALUE)
             .addGroup(jPanelSinuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelSinuLayout.createSequentialGroup()
                     .addGap(10, 10, 10)
@@ -368,14 +375,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanelHerramientasImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelBrillo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelFiltro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelContraste, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jPanelRotacion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanelContraste, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelRotacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelHerramientasImagenLayout.createSequentialGroup()
-                        .addComponent(jPanelEscala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHerramientasImagenLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPanelSinu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanelHerramientasImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanelEscala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanelSinu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jToolBarImagen.add(jPanelHerramientasImagen);
@@ -538,6 +544,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jButtonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuevoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonNuevoActionPerformed
+BufferedImage imagenNueva;//Variable que toma el valor del brillo
+    private void jSliderBrilloStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSliderBrilloStateChanged
+        // Slide que controla el brillo
+        VentanaInterna vi= (VentanaInterna)(escritorio.getSelectedFrame());
+        if (vi!=null){
+            BufferedImage imagenOriginal = vi.getLienzo().getImage();
+            if(imagenNueva==null)imagenNueva=imagenOriginal;
+            if(imagenOriginal!=null){
+                try{
+                    float valorBrilloSlider=jSliderBrillo.getValue();
+                    RescaleOp brillo=new RescaleOp (1.0F,valorBrilloSlider,null);
+                    BufferedImage imagenDestino = brillo.filter(imagenNueva,null);
+                    vi.getLienzo().setImage(imagenDestino);
+                    vi.getLienzo().repaint();}
+                catch(IllegalArgumentException e){
+                    System.err.println(e.getLocalizedMessage());
+                }
+            }
+                
+            }
+    }//GEN-LAST:event_jSliderBrilloStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

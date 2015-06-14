@@ -1,6 +1,5 @@
-package practica8;
+package Final;
 
-import sm.JAI.iu.Lienzo2D;
 import sm.JAI.iu.Lienzo2DImagen;
 
 /**

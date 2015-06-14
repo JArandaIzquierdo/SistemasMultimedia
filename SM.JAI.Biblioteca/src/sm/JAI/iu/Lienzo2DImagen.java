@@ -10,7 +10,7 @@ import java.awt.image.BufferedImage;
  */
 public class Lienzo2DImagen extends Lienzo2D {
     
-     private BufferedImage img;
+     private BufferedImage img=null;
      
     /**
      * Creates new form Lienzo2DImagen
