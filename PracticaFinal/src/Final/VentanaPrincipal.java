@@ -49,6 +49,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroupShapesYEditar = new javax.swing.ButtonGroup();
+        buttonGroupColores = new javax.swing.ButtonGroup();
         jToolBar1 = new javax.swing.JToolBar();
         jButtonNuevo = new javax.swing.JButton();
         jButtonAbrir = new javax.swing.JButton();
@@ -58,11 +59,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonRectangulo = new javax.swing.JToggleButton();
         jToggleButtonElipse = new javax.swing.JToggleButton();
         jToggleButtonEditar = new javax.swing.JToggleButton();
-        jComboBoxColores = new javax.swing.JComboBox();
         jSpinnerGrosor = new javax.swing.JSpinner();
         jToggleButtonRellenar = new javax.swing.JToggleButton();
         jToggleButtonTransparencia = new javax.swing.JToggleButton();
         jToggleButtonAlisar = new javax.swing.JToggleButton();
+        jButtonNegro = new javax.swing.JButton();
         escritorio = new javax.swing.JDesktopPane();
         jPanelImagenYBarraEstado = new javax.swing.JPanel();
         jToolBarImagen = new javax.swing.JToolBar();
@@ -116,12 +117,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButtonAbrir.setFocusable(false);
         jButtonAbrir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonAbrir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonAbrir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAbrirActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButtonAbrir);
 
         jButtonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sm/JAI/images/Guardar.gif"))); // NOI18N
         jButtonGuardar.setFocusable(false);
         jButtonGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGuardarActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButtonGuardar);
 
         buttonGroupShapesYEditar.add(jToggleButtonPunto);
@@ -164,14 +175,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jToggleButtonEditar);
 
-        jComboBoxColores.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBoxColores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxColoresActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jComboBoxColores);
-
         jSpinnerGrosor.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinnerGrosorStateChanged(evt);
@@ -197,17 +200,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButtonAlisar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jToggleButtonAlisar);
 
+        jButtonNegro.setBackground(new java.awt.Color(0, 0, 0));
+        jButtonNegro.setText("tytytyt");
+        jButtonNegro.setFocusable(false);
+        jButtonNegro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonNegro.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonNegro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNegroActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButtonNegro);
+
         getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 953, Short.MAX_VALUE)
+            .addGap(0, 900, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 134, Short.MAX_VALUE)
+            .addGap(0, 317, Short.MAX_VALUE)
         );
 
         getContentPane().add(escritorio, java.awt.BorderLayout.CENTER);
@@ -250,7 +265,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanelFiltro.setLayout(jPanelFiltroLayout);
         jPanelFiltroLayout.setHorizontalGroup(
             jPanelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jComboBox1, 0, 145, Short.MAX_VALUE)
+            .addComponent(jComboBox1, 0, 92, Short.MAX_VALUE)
         );
         jPanelFiltroLayout.setVerticalGroup(
             jPanelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -522,10 +537,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //Añadimos la ventana interna al esccritorio
         escritorio.add(vi);
         vi.setVisible(true);
-        BufferedImage img;
-        img = new BufferedImage(300,300,BufferedImage.TYPE_INT_RGB);
-        //codigo para que sea blanca, pintar un rectangulo blanco en la imagen (HACER)
-        vi.getLienzo().setImage(img);
+//        BufferedImage img;
+//        img = new BufferedImage(300,300,BufferedImage.TYPE_INT_RGB);
+//        //codigo para que sea blanca, pintar un rectangulo blanco en la imagen (HACER)
+//        vi.getLienzo().setImage(img);
 
     }//GEN-LAST:event_jMenuItemNuevoActionPerformed
 
@@ -574,10 +589,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jLabelBarraEstado.setVisible(this.jCheckBoxMenuItemEdicion.isSelected());
     }//GEN-LAST:event_jCheckBoxMenuItemEdicionStateChanged
 
-    private void jComboBoxColoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxColoresActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxColoresActionPerformed
-
     private void jMenuItemBarraFormasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jMenuItemBarraFormasStateChanged
         // TODO add your handling code here:
         // Con este checkBox controlamos que la barra de estado sea visible o no
@@ -617,7 +628,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonContrasteActionPerformed
 
     private void jButtonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuevoActionPerformed
-        // TODO add your handling code here:
+        //Creamos nuevos lienzos
+        VentanaInterna vi = new VentanaInterna();
+        escritorio.add(vi);
+        vi.setVisible(true);
     }//GEN-LAST:event_jButtonNuevoActionPerformed
 BufferedImage imagenNueva;//Variable que toma el valor del brillo
     private void jSliderBrilloStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSliderBrilloStateChanged
@@ -845,8 +859,53 @@ BufferedImage imagenNueva;//Variable que toma el valor del brillo
         } 
     }//GEN-LAST:event_jMenuItemGuardarAudioActionPerformed
 
+    private void jButtonAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirActionPerformed
+                
+        JFileChooser dlg = new JFileChooser();
+        int resp = dlg.showOpenDialog(this);
+        if( resp == JFileChooser.APPROVE_OPTION) {
+            try{
+                 File f = dlg.getSelectedFile();
+                 BufferedImage img = ImageIO.read(f);
+                 VentanaInterna vi = new VentanaInterna();
+                 vi.getLienzo().setImage(img);
+                 this.escritorio.add(vi);
+                 vi.setTitle(f.getName());
+                 vi.setVisible(true);
+            }catch(Exception ex){
+                System.err.println("Error al leer la imagen");
+            }
+        }
+    }//GEN-LAST:event_jButtonAbrirActionPerformed
+
+    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
+        
+        VentanaInterna vi=(VentanaInterna) escritorio.getSelectedFrame();
+            if (vi != null) {
+                JFileChooser dlg = new JFileChooser();
+                int resp = dlg.showSaveDialog(this);
+                if (resp == JFileChooser.APPROVE_OPTION) {
+                    try {
+                        BufferedImage img = vi.getLienzo().getImage();
+                        if (img != null) {
+                            File f = dlg.getSelectedFile();
+                            ImageIO.write(img, "jpg", f);
+                            vi.setTitle(f.getName());
+}
+                    }catch (Exception ex) {
+                        System.err.println("Error al guardar la imagen");
+                    }
+               }
+            }
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jButtonNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNegroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonNegroActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroupColores;
     private javax.swing.ButtonGroup buttonGroupShapesYEditar;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JButton jButton180;
@@ -858,12 +917,12 @@ BufferedImage imagenNueva;//Variable que toma el valor del brillo
     private javax.swing.JButton jButtonDIsminuir;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JButton jButtonIluminar;
+    private javax.swing.JButton jButtonNegro;
     private javax.swing.JButton jButtonNuevo;
     private javax.swing.JButton jButtonOscurecer;
     private javax.swing.JButton jButtonSinu;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemEdicion;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBoxColores;
     private javax.swing.JLabel jLabelBarraEstado;
     private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar2;
