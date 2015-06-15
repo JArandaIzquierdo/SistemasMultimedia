@@ -5,8 +5,6 @@
  */
 package Final;
 
-import MultimediaProgram.VentanaGrabarSonido;
-import MultimediaProgram.VentanaInternaReproductor;
 import java.awt.BasicStroke;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
@@ -823,7 +821,7 @@ BufferedImage imagenNueva;//Variable que toma el valor del brillo
                  this.escritorio.add(vr); 
                  vr.setVisible(true); 
             } catch (Exception ex) {
-                Logger.getLogger(MultimediaProgram.VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Final.VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
        
         }
